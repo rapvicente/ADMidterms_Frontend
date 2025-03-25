@@ -1,8 +1,14 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 
-const Page = () => {
+const Page: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <div className="min-h-screen bg-white relative">
       <style jsx global>{`
@@ -24,12 +30,23 @@ const Page = () => {
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
               <span>REGISTER</span>
-              <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
-                <span>Log-in</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+              <div className="relative">
+                <button onClick={toggleDropdown} className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
+                  <span>Log-in</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isDropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-[#FFC840] border border-gray-300 rounded-lg shadow-lg">
+                    <div className="py-1">
+                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100">Client</button>
+                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100">Agent</button>
+                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white hover:bg-gray-100">Writer</button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </button>
           </div>
         </div>
@@ -60,7 +77,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="text-center mt-16 bg-opacity-10" style={{ backgroundImage: 'url(/images/GLOW.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="text-center mt-16 bg-opacity-10" style={{ backgroundImage: 'url(/images/GLOW.png)', backgroundSize: '80%', backgroundPosition: 'center' }}>
         <h2 className="font-montserrat font-bold text-2xl text-black">Our Services</h2>
         <p className="font-montserrat text-lg mt-2 text-black">Explore flexible plans designed to support your goals and give you peace of mind:</p>
         <div className="flex justify-center mt-8 space-x-4">
