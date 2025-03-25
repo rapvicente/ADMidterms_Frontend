@@ -37,15 +37,19 @@ const Page: React.FC = () => {
           <div className="font-montserrat text-lg mt-4">
             <p className="font-bold text-black">Welcome to Lumina Insurances</p>
             <p className="font-bold text-black">– where coverage is Light and Easy.</p>
-            <p className="text-sm  mt-8 text-black">
-              As a Lumina Insurance Agent,<br />
-              you are the light that guides our clients toward financial security and peace of mind.<br />
-              This portal is built to support your work, streamline your tools, and celebrate your success.
+            <p className="text-sm mt-8 text-black">
+              As a trusted Policy Writer at Lumina Insurances,<br />
+              your role is vital in ensuring that every application,<br />
+              claim, and policy template meets our standards of care,<br />
+              compliance, and clarity. This portal helps you stay organized, efficient, and in control.
             </p>
-            <div className="flex flex-col items-center mt-15 space-y-4 ] ml-[-100px]">
-              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg w-full max-w-xs">Manage Clients with ease</button>
-              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg w-full max-w-xs">Submit and Process Applications</button>
-              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg w-full max-w-xs">Your Performance, Your Growth</button>
+            <div className="flex flex-col items-center mt-17 space-y-4 ml-[-100px]">
+              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg w-full max-w-xs text-center mr-25">Thank you for Your Expertise</button>
+              <p className="text-sm mt-4 text-black text-justify ml-30">
+                <strong>At Lumina, we believe insurance should be light and easy<br />
+                — and your diligence behind the scenes ensures that promise is fulfilled.<br />
+                Keep writing the future, one policy at a time.</strong>
+              </p>
             </div>
           </div>
           <div className="absolute bottom-13 right-170 bg-white rounded-lg w-40 h-40 shadow-lg border-2 border-black" style={{ transform: 'translate(50%, 50%)' }}>
