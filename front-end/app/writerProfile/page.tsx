@@ -27,9 +27,9 @@ const Page: React.FC = () => {
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claims and Services</button>
-            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Create Application Form</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span>BACK</span>
+              <span>HOMEPAGE</span>
               <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
                 <span>Logout</span>
               </button>
@@ -38,48 +38,57 @@ const Page: React.FC = () => {
         </div>
       </header>
       <div className="relative flex items-center justify-center min-h-screen">
-        <div className="absolute top-[130px] left-1/2 transform -translate-x-1/2 w-[900px] h-[200px] border-1 border-[#FFC840] bg-[#FFFFFF] rounded-3xl mb-1">
+        <div className="absolute top-[130px] left-1/2 transform -translate-x-1/2 w-[900px] h-[200px] bg-[#D9D9D9] rounded-3xl mb-1">
           <div className="absolute left-[1px] w-[200px] h-[200px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
             <img src="/images/lumina.png" alt="Lumina Logo" className="absolute top-1/2 left-1/2 w-[50%] h-[50%] transform -translate-x-1/2 -translate-y-1/2" />
           </div>
           <div className="absolute left-[230px] top-[10px]">
             {/* Username */}
             <div className="text-[24px] font-semibold text-black font-montserrat">
-              Althea Irish Manalo
+              Hello! Ongskie
             </div>
             {/* Name */}
             <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Policies Owned: 4
+              Name: John Benedict Ong
             </div>
             {/* Birthdate */}
             <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Birthdate: August 1, 2345
+              Birthdate: November 1, 2345
             </div>
             {/* Age */}
             <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Agent Name: Dave Mercado
+              Age: 36
+            </div>
+            {/* Edit Profile */}
+            <div className="mt-4 w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full">
+              <span className="text-center">EDIT PROFILE</span>
             </div>
           </div>
           <div className="absolute right-[20px] top-[55px]">
             {/* Email */}
             <div className="text-[15px] font-normal text-black font-montserrat">
-              Email: manalo2221641@mkt.ceu.edu.ph
+              Email: ong2221323@mkt.ceu.edu.ph
             </div>
             {/* Phone Number */}
             <div className="text-[15px] font-normal text-black font-montserrat mt-2">
               Phone Number: 0912 3456 789
             </div>
+            <div className="text-[15px] font-normal text-black font-montserrat mt-2">
+              Password: ***********
+            </div>
+            {/* Change Password */}
+            <div className="mt-4 w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full">
+              <span className="text-center">CHANGE PASSWORD</span>
+            </div>
           </div>
         </div>
-        
-        {/* My Policies */}
-        <div className="absolute top-[390px] left-1/2 absolute left-[504px] w-[120px] text-[12px] h-[30px] flex items-center justify-center border-2 border-[#FFC840] text-black font-montserrat font-bold rounded-2xl">
-          <span className="text-center">Policies Owned</span>
+     <div className="absolute top-[390px] left-1/2 absolute left-[504px] w-[120px] text-[12px] h-[30px] flex items-center justify-center border-2 border-[#FFC840] text-black font-montserrat font-bold rounded-2xl">
+          <span className="text-center">My History</span>
         </div>
-         <div className="absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] h-[260px] bg-[#FFC840] rounded-3xl mt-1 mb-1">
+         <div className="absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] h-96 bg-[#FFC840] rounded-3xl">
           <div className="absolute left-[20px] top-[10px] flex flex-col space-y-4">
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFFFFF] border-1 text-black font-bold rounded-2xl">
+              <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-montserrat font-bold text-black">
@@ -133,6 +142,61 @@ const Page: React.FC = () => {
                 Insured Name: Justin Dennis Sauquillo
               </div>
             </div>
+             <div className="flex items-center space-x-4">
+              <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+                <span className="text-center">View</span>
+              </div>
+              <div className="text-[14px] font-montserrat font-bold text-black">
+                Retirement (Premium) •
+              </div>
+              <div className="text-[14px] font-normal font-montserrat text-black">
+                Insured Name: Ralph Benedict Vicente
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+                <span className="text-center">View</span>
+              </div>
+              <div className="text-[14px] font-bold font-montserrat text-black">
+                Education (Basic)  •
+              </div>
+              <div className="text-[14px] font-normal font-montserrat text-black">
+                Insured Name: Ethan Araneta
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+                <span className="text-center">View</span>
+              </div>
+              <div className="text-[14px] font-bold font-montserrat text-black">
+                Health (Premium)  •
+              </div>
+              <div className="text-[14px] font-normal font-montserrat text-black">
+                Insured Name: Althea Irish Manalo
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+                <span className="text-center">View</span>
+              </div>
+              <div className="text-[14px] font-bold font-montserrat text-black">
+                Auto (Standard)  •
+              </div>
+              <div className="text-[14px] font-normal font-montserrat text-black">
+                Insured Name: Leamei Quiñanola
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+                <span className="text-center">View</span>
+              </div>
+              <div className="text-[14px] font-bold font-montserrat text-black">
+                Auto (Premium)  •
+              </div>
+              <div className="text-[14px] font-normal font-montserrat text-black">
+                Insured Name: Justin Dennis Sauquillo
+              </div>
+              </div>
         </div>
         {/* Status */}
         <div className="absolute right-5 mt-4">
@@ -154,7 +218,7 @@ const Page: React.FC = () => {
           </div>
         </div>
       </div>
-      <footer className="bg-[#FFC840] text-black py-4">
+        <footer className="bg-[#FFC840] text-black py-4 mt-35">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col items-start">
             <div className="flex space-x-2">
