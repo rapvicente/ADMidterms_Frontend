@@ -21,7 +21,7 @@ const Page: React.FC = () => {
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claim and Services</button>
-            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Create Application Form</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
               <span>MY PROFILE</span>
               <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
@@ -96,51 +96,52 @@ const Page: React.FC = () => {
         </div>
       </div>
       <div className="mt-32 mx-auto p-8 rounded-lg shadow-lg max-w-6xl border-2 border-black flex items-center justify-center" style={{ background: 'linear-gradient(to bottom, #FFC840, #FBFBFB)' }}>
-          <div className="flex flex-col items-center">
-            <h3 className="font-montserrat text-2xl text-black mb-4 text-center font-bold">
-              Why <br /> Choose <br /> Lumina?
-            </h3>
+        <div className="flex flex-col items-center">
+          <h3 className="font-montserrat text-2xl text-black mb-4 text-center font-bold">
+            Why <br /> Choose <br /> Lumina?
+          </h3>
+        </div>
+        <div className="ml-8 flex flex-col justify-center items-start">
+          <div className="flex items-center mb-4">
+            <span className="font-montserrat text-sm text-black">💡</span>
+            <p className="font-montserrat text-sm text-black ml-2">Simple process – No complicated steps</p>
           </div>
-          <div className="ml-8 flex flex-col justify-center items-start">
-            <div className="flex items-center mb-4">
-              <span className="font-montserrat text-sm text-black">💡</span>
-              <p className="font-montserrat text-sm text-black ml-2">Simple process – No complicated steps</p>
-            </div>
-            <div className="flex items-center mb-4">
-              <span className="font-montserrat text-sm text-black">📱</span>
-              <p className="font-montserrat text-sm text-black ml-2">Easy access – Manage your account anytime, anywhere</p>
-            </div>
-            <div className="flex items-center mb-4">
-              <span className="font-montserrat text-sm text-black">💬</span>
-              <p className="font-montserrat text-sm text-black ml-2">Reliable support – Our team is here when you need us</p>
-            </div>
-            <div className="flex items-center">
-              <span className="font-montserrat text-sm text-black">💰</span>
-              <p className="font-montserrat text-sm text-black ml-2">Affordable plans – Quality coverage that fits your budget</p>
-            </div>
+          <div className="flex items-center mb-4">
+            <span className="font-montserrat text-sm text-black">📱</span>
+            <p className="font-montserrat text-sm text-black ml-2">Easy access – Manage your account anytime, anywhere</p>
           </div>
+          <div className="flex items-center mb-4">
+            <span className="font-montserrat text-sm text-black">💬</span>
+            <p className="font-montserrat text-sm text-black ml-2">Reliable support – Our team is here when you need us</p>
           </div>
-      <footer className="bg-[#FFC840] text-black py-1 mt-16">
+          <div className="flex items-center">
+            <span className="font-montserrat text-sm text-black">💰</span>
+            <p className="font-montserrat text-sm text-black ml-2">Affordable plans – Quality coverage that fits your budget</p>
+          </div>
+        </div>
+      </div>
+      <footer className="bg-[#FFC840] text-black py-4 mt-35">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col items-start">
             <div className="flex space-x-2">
-              <a href="#" className="font-montserrat text-xs font-bold">Our Team</a>
-              <a href="#" className="font-montserrat text-xs font-bold">Contact Us</a>
-              <a href="#" className="font-montserrat text-xs font-bold">Terms and Conditions</a>
-            </div>
-            <div className="flex items-center mt-1">
-              <img src="/images/mail.png" alt="Email" className="h-3 w-3 mr-1" />
-              <p className="font-montserrat text-xs font-bold">lumina.insurances@gmail.com</p>
+              <p className="font-montserrat text-xs">Copyright © 2025 Lumina Insurances. All rights reserved.</p>
             </div>
           </div>
-          
           <div className="flex flex-col items-end">
-            <p className="font-montserrat text-xs font-bold">© 2025 Lumina Insurances. All rights reserved.</p>
             <div className="flex justify-center items-center space-x-2 mt-1">
+              <a href="#" className="font-montserrat text-xs">Our Team</a>
+              <a href="#" className="font-montserrat text-xs">Contact Us</a>
+              <a href="#" className="font-montserrat text-xs">Terms and Conditions</a>
+            </div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-2 mt-2">
               <img src="/images/Facebook.png" alt="Facebook" className="h-4 w-4" />
               <img src="/images/LinkedIn.png" alt="LinkedIn" className="h-4 w-4" />
               <img src="/images/Instagram.png" alt="Instagram" className="h-4 w-4" />
               <img src="/images/X.png" alt="X" className="h-4 w-4" />
+            </div>
+            <div className="flex items-center mt-1">
+              <img src="/images/mail.png" alt="Email" className="h-3 w-3 mr-1" />
+              <p className="font-montserrat text-xs">lumina.insurances@gmail.com</p>
             </div>
           </div>
         </div>
