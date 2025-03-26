@@ -1,14 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 
 const Page: React.FC = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
   return (
     <div className="min-h-screen bg-white relative">
       <style jsx global>{`
@@ -29,24 +23,10 @@ const Page: React.FC = () => {
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claim and Services</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span>REGISTER</span>
-              <div className="relative">
-                <button onClick={toggleDropdown} className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
-                  <span>Log-in</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-[#FFC840] border border-gray-300 rounded-lg shadow-lg">
-                    <div className="py-1">
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100">Client</button>
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100">Agent</button>
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white hover:bg-gray-100">Writer</button>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <span>MY PROFILE</span>
+              <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
+                <span>Logout</span>
+              </button>
             </button>
           </div>
         </div>
@@ -57,19 +37,19 @@ const Page: React.FC = () => {
           <div className="font-montserrat text-lg mt-4">
             <p className="font-bold text-black">Welcome to Lumina Insurances</p>
             <p className="font-bold text-black">– where coverage is Light and Easy.</p>
-            <p className="text-sm font-bold mt-8 text-black">Get started today and enjoy peace of mind with flexible plans for:</p>
-            <div className="flex justify-center mt-4">
-              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg">Retirement</button>
-              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg">Education</button>
-              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg">Health</button>
-              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg">Auto</button>
-            </div>
-            <div className="mt-15 text-sm font-montserrat ml-15 text-black">
-              <p>✔️ Explore personalized insurance plans</p>
-              <p>✔️ Manage your policies in one place</p>
-              <p>✔️ Access quick support and updates</p>
-              <p className="mt-4">Let’s light the way to your secure future.</p>
-              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4">REGISTER</button>
+            <p className="text-sm mt-8 text-black">
+              As a trusted Policy Writer at Lumina Insurances,<br />
+              your role is vital in ensuring that every application,<br />
+              claim, and policy template meets our standards of care,<br />
+              compliance, and clarity. This portal helps you stay organized, efficient, and in control.
+            </p>
+            <div className="flex flex-col items-center mt-17 space-y-4 ml-[-100px]">
+              <button className="bg-white text-black py-2 px-12 rounded-full text-[12px] font-montserrat font-bold border-2 border-[#FFC840] shadow-lg w-full max-w-xs text-center mr-25">Thank you for Your Expertise</button>
+              <p className="text-sm mt-4 text-black text-justify ml-30">
+                <strong>At Lumina, we believe insurance should be light and easy<br />
+                — and your diligence behind the scenes ensures that promise is fulfilled.<br />
+                Keep writing the future, one policy at a time.</strong>
+              </p>
             </div>
           </div>
           <div className="absolute bottom-13 right-170 bg-white rounded-lg w-40 h-40 shadow-lg border-2 border-black" style={{ transform: 'translate(50%, 50%)' }}>
@@ -78,8 +58,8 @@ const Page: React.FC = () => {
         </div>
       </div>
       <div className="text-center mt-16 bg-opacity-10" style={{ backgroundImage: 'url(/images/GLOW.png)', backgroundSize: '80%', backgroundPosition: 'center' }}>
-        <h2 className="font-montserrat font-bold text-2xl text-black">Our Services</h2>
-        <p className="font-montserrat text-lg mt-2 text-black">Explore flexible plans designed to support your goals and give you peace of mind:</p>
+        <h2 className="font-montserrat font-bold text-2xl text-black">Policies to Offer</h2>
+        <p className="font-montserrat text-lg mt-2 text-black">Explore flexible plans designed to support your client’s goals and give them peace of mind:</p>
         <div className="flex justify-center mt-8 space-x-4">
           <div className="flex flex-col items-center">
             <div className="relative bg-[#FFC840] text-black h-80 w-64 rounded-lg text-[12px] font-montserrat font-bold shadow-lg flex items-center justify-center border border-black" style={{ backgroundImage: 'url(/images/img1.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>

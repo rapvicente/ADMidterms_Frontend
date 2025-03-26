@@ -1,14 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 
 const Page: React.FC = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
   return (
     <div className="min-h-screen bg-white relative">
       <style jsx global>{`
@@ -29,24 +23,10 @@ const Page: React.FC = () => {
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claim and Services</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span>REGISTER</span>
-              <div className="relative">
-                <button onClick={toggleDropdown} className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
-                  <span>Log-in</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-[#FFC840] border border-gray-300 rounded-lg shadow-lg">
-                    <div className="py-1">
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100">Client</button>
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100">Agent</button>
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white hover:bg-gray-100">Writer</button>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <span>MY PROFILE</span>
+              <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
+                <span>Logout</span>
+              </button>
             </button>
           </div>
         </div>
@@ -69,7 +49,7 @@ const Page: React.FC = () => {
               <p>✔️ Manage your policies in one place</p>
               <p>✔️ Access quick support and updates</p>
               <p className="mt-4">Let’s light the way to your secure future.</p>
-              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4">REGISTER</button>
+              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4">MY PROFILE</button>
             </div>
           </div>
           <div className="absolute bottom-13 right-170 bg-white rounded-lg w-40 h-40 shadow-lg border-2 border-black" style={{ transform: 'translate(50%, 50%)' }}>
