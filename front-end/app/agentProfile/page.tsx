@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-const Profile: React.FC = () => {
+const Page: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -27,9 +27,9 @@ const Profile: React.FC = () => {
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claims and Services</button>
-            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Create Application Form</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span>HOMEPAGE</span>
+              <span>BACK</span>
               <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
                 <span>Logout</span>
               </button>
@@ -45,19 +45,19 @@ const Profile: React.FC = () => {
           <div className="absolute left-[230px] top-[10px]">
             {/* Username */}
             <div className="text-[24px] font-semibold text-black font-montserrat">
-              Hello! Iwissmanalo
+              Hello! DBMercado
             </div>
             {/* Name */}
             <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Name: Althea Irish Manalo
+              Name: Dave Mercado
             </div>
             {/* Birthdate */}
             <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Birthdate: January 1, 2345
+              Birthdate: October 1, 2345
             </div>
             {/* Age */}
             <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Agent Name: Dave Mercado
+              Age: 31
             </div>
             {/* Edit Profile */}
             <div className="mt-4 w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full">
@@ -67,7 +67,7 @@ const Profile: React.FC = () => {
           <div className="absolute right-[20px] top-[55px]">
             {/* Email */}
             <div className="text-[15px] font-normal text-black font-montserrat">
-              Email: manalo222641@mkt.ceu.edu.ph
+              Email: mercado2221464@mkt.ceu.edu.ph
             </div>
             {/* Phone Number */}
             <div className="text-[15px] font-normal text-black font-montserrat mt-2">
@@ -85,7 +85,7 @@ const Profile: React.FC = () => {
         
         {/* My Policies */}
         <div className="absolute top-[390px] left-1/2 absolute left-[504px] w-[120px] text-[12px] h-[30px] flex items-center justify-center border-2 border-[#FFC840] text-black font-montserrat font-bold rounded-2xl">
-          <span className="text-center">My Policies</span>
+          <span className="text-center">My Clients</span>
         </div>
          <div className="absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
           <div className="absolute left-[20px] top-[10px] flex flex-col space-y-4">
@@ -94,10 +94,10 @@ const Profile: React.FC = () => {
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-montserrat font-bold text-black">
-                Retirement (Premium) •
+                Althea Irish Manalo •
               </div>
               <div className="text-[14px] font-normal font-montserrat text-black">
-                Insured Name: Ralph Benedict Vicente
+                Policies Owned:4
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -105,10 +105,10 @@ const Profile: React.FC = () => {
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
-                Education (Basic)  •
+                Leamei Quiñanola  •
               </div>
               <div className="text-[14px] font-normal font-montserrat text-black">
-                Insured Name: Ralph Benedict Vicente
+                Policies Owned: 2
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -116,10 +116,10 @@ const Profile: React.FC = () => {
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
-                Health (Premium)  •
+                Philippe Dwaine Estacio  •
               </div>
               <div className="text-[14px] font-normal font-montserrat text-black">
-                Insured Name: Ralph Benedict Vicente
+                Policies Owned: 5
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -127,10 +127,10 @@ const Profile: React.FC = () => {
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
-                Auto (Standard)  •
+                Bianca Denise Inocencio  •
               </div>
               <div className="text-[14px] font-normal font-montserrat text-black">
-                Insured Name: Ralph Benedict Vicente
+                Policies Owned: 1
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -138,116 +138,34 @@ const Profile: React.FC = () => {
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
-                Auto (Premium)  •
+                Miguelito Carandang  •
               </div>
               <div className="text-[14px] font-normal font-montserrat text-black">
-                Insured Name: Ralph Benedict Vicente
+                Policies Owned: 3
               </div>
             </div>
         </div>
         {/* Status */}
         <div className="absolute right-5 mt-4">
             <div className="text-[14px] font-normal text-black font-montserrat">
-            Status: Active
+            Member Since: January 23, 2023
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Active
+            Member Since: April 30, 2024
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Active
+            Member Since: December 2, 2023
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
+            Member Since: August 6, 2025
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Under Review
+            Member Since: June 9, 2023
             </div>
           </div>
-      </div>
-        {/* Statements */}
-        <div className="absolute top-[710px] left-1/2 absolute left-[504px] w-[120px] text-[12px] h-[30px] flex items-center justify-center border-2 border-[#FFC840] text-black font-montserrat font-bold rounded-2xl">
-          <span className="text-center">Statements</span>
         </div>
-        <div className="absolute top-[750px] left-1/2 mb-4 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
-          <div className="absolute left-[20px] top-[10px] mb-4 flex flex-col space-y-4">
-            {/* View buttons */}
-            <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
-              </div>
-              <div className="text-[14px] font-montserrat font-bold text-black">
-                Retirement (Premium) •
-              </div>
-              <div className="text-[14px] font-normal font-montserrat text-black">
-              Due Date: February 28, 2026
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
-              </div>
-              <div className="text-[14px] font-bold font-montserrat text-black">
-                Education (Basic)  •
-              </div>
-              <div className="text-[14px] font-normal font-montserrat text-black">
-              Due Date: February 28, 2026
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
-              </div>
-              <div className="text-[14px] font-bold font-montserrat text-black">
-                Health (Premium)  •
-              </div>
-              <div className="text-[14px] font-normal font-montserrat text-black">
-              Due Date: February 28, 2026
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
-              </div>
-              <div className="text-[14px] font-bold font-montserrat text-black">
-                Auto (Standard)  •
-              </div>
-              <div className="text-[14px] font-normal font-montserrat text-black">
-              Due Date: February 28, 2026
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
-              </div>
-              <div className="text-[14px] font-bold font-montserrat text-black">
-                Auto (Premium)  •
-              </div>
-              <div className="text-[14px] font-normal font-montserrat text-black">
-              Due Date: February 28, 2026
-              </div>
-            </div>
-        </div>
-        {/* Status */}
-        <div className="absolute right-5 mt-4">
-            <div className="text-[14px] font-normal text-black font-montserrat">
-            Status: Paid
-            </div>
-            <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
-            </div>
-            <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
-            </div>
-            <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
-            </div>
-            <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Paid
-            </div>
-          </div>
       </div>
-    </div>
-      <footer className="bg-[#FFC840] text-black py-4 mt-35">
+      <footer className="bg-[#FFC840] text-black py-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col items-start">
             <div className="flex space-x-2">
@@ -277,4 +195,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default Page;
