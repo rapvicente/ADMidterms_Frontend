@@ -130,34 +130,7 @@ const Signup = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-[#FFC840] w-full py-3 mt-6">
-        <div className="flex justify-between items-center px-6 text-black text-xs font-montserrat">
-          {/* Left: Copyright */}
-          <p className="font-bold">© 2025 Lumina Insurances. All rights reserved.</p>
-
-          {/* Center: Social Media Icons */}
-          <div className="flex space-x-4">
-            <img src="/images/Facebook.png" alt="Facebook" className="h-4" />
-            <img src="/images/LinkedIn.png" alt="LinkedIn" className="h-4" />
-            <img src="/images/Instagram.png" alt="Instagram" className="h-4" />
-            <img src="/images/X.png" alt="Twitter" className="h-4" />
-          </div>
-
-          {/* Right: Navigation Links & Email */}
-          <div className="flex flex-col items-end space-y-1">
-            <div className="flex space-x-4">
-              <a href="#" className="hover:underline">Our Team</a>
-              <a href="#" className="hover:underline">Contact Us</a>
-              <a href="#" className="hover:underline">Terms and Conditions</a>
-            </div>
-            <div className="flex items-center space-x-2">
-              <img src="/images/mail.png" alt="Email" className="h-4" />
-              <span>lumina.insurances@gmail.com</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 };
