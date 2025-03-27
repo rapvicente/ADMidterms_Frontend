@@ -88,7 +88,7 @@ const Page: React.FC = () => {
          <div className="flex justify-between items-center absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[1000px] bg-[#FFC840] rounded-3xl p-6">
          <div className="space-y-3">
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-montserrat font-bold text-black">
@@ -99,7 +99,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -110,7 +110,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -121,7 +121,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -132,7 +132,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -143,7 +143,7 @@ const Page: React.FC = () => {
               </div>
             </div>
              <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-montserrat font-bold text-black">
@@ -154,7 +154,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -165,7 +165,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -176,7 +176,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -187,7 +187,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:bg-[#FFC840] hover:text-white w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFFFFF] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center">View</span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -233,11 +233,14 @@ const Page: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 w-[200px]">
-        <button className="w-full text-black text-[14px] font-bold py-2 rounded-2xl border-1 hover:bg-[#FFC840] hover:text-white transition-all">
-          View More
-        </button>
-      </div>
+      <div className="flex justify-center absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-[200px] z-10">
+      <button
+        className="w-full text-black text-[14px] font-bold py-2 rounded-2xl border-1 hover:bg-[#FFC840] hover:text-white transition-all"
+        style={{ cursor: "pointer" }}
+      >
+        View More
+      </button>
+    </div>
         <footer className="bg-[#FFC840] text-black py-4 mt-35">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col items-start">
