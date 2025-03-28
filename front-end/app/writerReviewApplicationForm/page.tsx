@@ -1,12 +1,16 @@
 "use client";
 
 import React from "react";
-
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
 const PolicyCertificate: React.FC = () => {
+    const router = useRouter(); // Initialize the router
+
     return (
         <div className="relative">
             <div className="absolute rounded-lg right-10">
-                <button className="bg-[#FFC840] text-black py-3 px-10 rounded-lg text-sm font-bold shadow-none hover:shadow-inner transition-shadow duration-300">
+                <button
+                    onClick={() => router.back()}
+                    className="bg-[#FFC840] text-black py-3 px-10 rounded-lg text-sm font-bold shadow-none hover:shadow-inner transition-shadow duration-300">
                     Back
                 </button>
             </div>
@@ -385,7 +389,10 @@ const PolicyCertificate: React.FC = () => {
                     <p className="font-bold">Writer Name and Signature</p>
                     <p>Date Signed: December 20, 2024</p>
                 </div>
-                <button className="bg-[#FFC840] px-14 py-3 text-black font-bold rounded-lg shadow-md mt-8 mb-8">
+                <button
+                    onClick={() => router.back()}
+                    className="bg-[#FFC840] px-14 py-3 text-black font-bold rounded-lg shadow-md mt-8 mb-8">
+
                     Submit Review
                 </button>
             </div>
