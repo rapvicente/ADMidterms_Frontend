@@ -1,29 +1,32 @@
 "use client";
 
+import Link from 'next/link';
 import React from 'react';
 
 const ClaimsAndServices: React.FC = () => {
     return (
         <div className="text-black min-h-screen bg-white relative">
-            <header className="fixed top-0 left-0 right-0 shadow-md bg-white z-50">
-                <div className="flex items-center justify-between p-2">
-                    <div className="flex items-center">
-                        <img src="/images/lumina.png" alt="Lumina Logo" width="80" height="80" />
-                    </div>
-                    <div className="flex space-x-2">
-                        <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
-                        <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
-                        <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claims and Services</button>
-                        <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
-                        <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-                            <span>MY PROFILE</span>
-                            <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
-                                <span>Logout</span>
-                            </button>
-                        </button>
-                    </div>
-                </div>
-            </header>
+                  <header className="fixed top-0 left-0 right-0 shadow-md bg-white z-50">
+        <div className="flex items-center justify-between p-2">
+        <div className="flex items-center">
+            <Link href="/clientHomepage">
+              <img src="/images/lumina.png" alt="Lumina Logo" width="80" height="80" />
+            </Link>
+        </div>
+          <div className="flex space-x-2">
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold"><Link href="/clientClaimsAndServices">Claims and Services</Link></button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
+            <span><Link href="/clientProfile">MY PROFILE</Link></span>
+              <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
+                <span><Link href="/">Logout</Link></span>
+              </button>
+            </button>
+          </div>
+        </div>
+      </header>
 
             <main className="flex flex-col items-center justify-center text-center px-10 py-16 max-w-6xl mx-auto">
                 <img src="/images/bulb.png" alt="png" className="h-40 w-40 mb-6 mt-20" />
@@ -42,7 +45,9 @@ const ClaimsAndServices: React.FC = () => {
                     We understand that filing a claim can be a stressful time. That's why we've streamlined the process to be as efficient and hassle-free as possible.
                 </p>
 
-                <button className="bg-[#FFC840] text-black py-3 px-6 rounded-lg font-montserrat font-bold mt-6">SUBMIT CLAIMS</button>
+                <Link href="/clientClaimSubmission">
+                    <button className="bg-[#FFC840] text-black py-3 px-6 rounded-lg font-montserrat font-bold mt-6">SUBMIT CLAIMS</button>
+                </Link>
             </main>
 
             <footer className="bg-[#FFC840] text-black py-4 mt-2">

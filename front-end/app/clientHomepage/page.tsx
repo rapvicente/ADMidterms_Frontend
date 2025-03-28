@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 
 const Page: React.FC = () => {
   return (
@@ -15,17 +16,19 @@ const Page: React.FC = () => {
       <header className="fixed top-0 left-0 right-0 shadow-md bg-white z-50">
         <div className="flex items-center justify-between p-2">
           <div className="flex items-center">
-            <img src="/images/lumina.png" alt="Lumina Logo" width="80" height="80" />
+            <Link href="/clientHomepage">
+              <img src="/images/lumina.png" alt="Lumina Logo" width="80" height="80" />
+            </Link>
           </div>
           <div className="flex space-x-2">
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
-            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claim and Services</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold"><Link href="/clientClaimsAndServices">Claims and Services</Link></button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span>MY PROFILE</span>
+            <span><Link href="/clientProfile">MY PROFILE</Link></span>
               <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
-                <span>Logout</span>
+                <span><Link href="/">Logout</Link></span>
               </button>
             </button>
           </div>
@@ -49,7 +52,7 @@ const Page: React.FC = () => {
               <p>✔️ Manage your policies in one place</p>
               <p>✔️ Access quick support and updates</p>
               <p className="mt-4">Let’s light the way to your secure future.</p>
-              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4">MY PROFILE</button>
+              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4"><span><Link href="/clientProfile">MY PROFILE</Link></span></button>
             </div>
           </div>
           <div className="absolute bottom-13 right-170 bg-white rounded-lg w-40 h-40 shadow-lg border-2 border-black" style={{ transform: 'translate(50%, 50%)' }}>
