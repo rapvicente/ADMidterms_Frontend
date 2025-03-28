@@ -1,16 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const PolicyCertificate: React.FC = () => {
     return (
-        <div className="relative">
+        <div className="relative">            
             <div className="absolute rounded-lg right-10">
+              <Link href="/agentHomepage">
                 <button className="bg-[#FFC840] text-black py-3 px-10 rounded-lg text-sm font-bold shadow-none hover:shadow-inner transition-shadow duration-300">
-                    Back
+                  Back
                 </button>
+              </Link>
             </div>
-
             <div className="text-black text-center mt-8">
                 <h1 className="text-2xl font-bold">Lumina Official Certificate of Insurance Template</h1>
                 <p>For Agent Use Only</p>
