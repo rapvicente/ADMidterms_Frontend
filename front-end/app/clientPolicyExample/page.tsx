@@ -1,18 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import router from "next/router";
 import React from "react";
 
 const PolicyCertificate: React.FC = () => {
     return (
         <div className="relative">
             <div className="absolute rounded-lg right-10">
-              <Link href="/clientHomepage">
-                <button className="bg-[#FFC840] text-black py-3 px-10 rounded-lg text-sm font-bold shadow-none hover:shadow-inner transition-shadow duration-300">
-                  Back
-                </button>
-              </Link>
-            </div>
+            <button
+                onClick={() => router.back()}
+                className="bg-[#FFC840] text-black py-3 px-10 rounded-lg text-sm font-bold shadow-none hover:shadow-inner transition-shadow duration-300"
+            >
+                Back
+            </button>
+        </div>
 
             <div className="min-h-screen bg-white text-black font-montserrat px-6 py-8 relative max-w-5xl mx-auto border-3 border-3-gray-300 shadow-lg mt-8 mb-8">
 
