@@ -1,12 +1,10 @@
 import "server-only";
 
+
 const apiClient = async (url, options) => {
     options.cache = "no-cache";
 
     try {
-        options.headers = {
-            "Content-Type": "application/json"
-        };
         let res = await fetch(url, options);
 
         let resObj = await res.json();
@@ -67,6 +65,10 @@ const getModuleByID = async (modules, id) => {
       message: data.message,
       data: data.data,
     };
+  };
+
+  const url = () => {
+    return process.env.NEXT_PUBLIC_URL;
   };
 
 export {
