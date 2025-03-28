@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Page: React.FC = () => {
@@ -29,7 +30,7 @@ const Page: React.FC = () => {
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claim and Services</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span>REGISTER</span>
+              <span><Link href="/signUp">REGISTER</Link></span>
               <div className="relative">
                 <button onClick={toggleDropdown} className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
                   <span>Log-in</span>
@@ -40,9 +41,9 @@ const Page: React.FC = () => {
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-[#FFC840] border border-gray-300 rounded-lg shadow-lg">
                     <div className="py-1">
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100">Client</button>
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100">Agent</button>
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white hover:bg-gray-100">Writer</button>
+                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100"><Link href="/logIn">Client</Link></button>
+                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100"><Link href="/logIn">Agent</Link></button>
+                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white hover:bg-gray-100"><Link href="/logIn">Writer</Link></button>
                     </div>
                   </div>
                 )}
@@ -69,7 +70,7 @@ const Page: React.FC = () => {
               <p>✔️ Manage your policies in one place</p>
               <p>✔️ Access quick support and updates</p>
               <p className="mt-4">Let’s light the way to your secure future.</p>
-              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4">REGISTER</button>
+              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4">              <span><Link href="/signUp">REGISTER</Link></span></button>
             </div>
           </div>
           <div className="absolute bottom-13 right-170 bg-white rounded-lg w-40 h-40 shadow-lg border-2 border-black" style={{ transform: 'translate(50%, 50%)' }}>
