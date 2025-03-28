@@ -1,18 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const LogIn = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white relative">
-      <div className="absolute top-8 right-8">
-        <a
-          href="/"
-          className="bg-[#FFC840] px-12 py-3 text-black font-bold rounded-lg shadow-md font-montserrat"
-        >
-          Back
-        </a>
-      </div>
+     <div className="absolute rounded-lg mt-10 right-10">
+              <Link href="/">
+                <button className="bg-[#FFC840] text-black py-3 px-10 rounded-lg text-sm font-bold shadow-none hover:shadow-inner transition-shadow duration-300">
+                  Back
+                </button>
+              </Link>
+            </div>
 
       {/* Main Container */}
       <div className="flex-grow w-full max-w-[1200px] flex items-center justify-between mx-auto">
@@ -67,7 +67,7 @@ const LogIn = () => {
               </button>
               <p className="text-center text-sm text-white mt-2">
                 Don't have an account yet?{" "}
-                <a href="#" className="text-yellow-300">
+                <a href="/signUp" className="text-yellow-300">
                   Sign up here
                 </a>
               </p>
