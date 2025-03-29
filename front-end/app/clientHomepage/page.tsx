@@ -1,15 +1,9 @@
 "use client";
 
+import React from 'react';
 import Link from 'next/link';
-import React, { useState } from 'react';
 
 const Page: React.FC = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
   return (
     <div className="min-h-screen bg-white relative">
       <style jsx global>{`
@@ -22,32 +16,20 @@ const Page: React.FC = () => {
       <header className="fixed top-0 left-0 right-0 shadow-md bg-white z-50">
         <div className="flex items-center justify-between p-2">
           <div className="flex items-center">
-            <img src="/images/lumina.png" alt="Lumina Logo" width="80" height="80" />
+            <Link href="/clientHomepage">
+              <img src="/images/lumina.png" alt="Lumina Logo" width="80" height="80" />
+            </Link>
           </div>
           <div className="flex space-x-2">
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
-            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claim and Services</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold"><Link href="/clientClaimsAndServices">Claims and Services</Link></button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span><Link href="/signUp">REGISTER</Link></span>
-              <div className="relative">
-                <button onClick={toggleDropdown} className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
-                  <span>Log-in</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-[#FFC840] border border-gray-300 rounded-lg shadow-lg">
-                    <div className="py-1">
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100"><Link href="/logIn">Client</Link></button>
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white border-b border-[#FFC840] hover:bg-gray-100"><Link href="/logIn">Agent</Link></button>
-                      <button className="block w-full text-center px-4 py-2 text-sm text-black bg-white hover:bg-gray-100"><Link href="/logIn">Writer</Link></button>
-                    </div>
-                  </div>
-                )}
-              </div>
+            <span><Link href="/clientProfile">MY PROFILE</Link></span>
+              <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
+                <span><Link href="/">Logout</Link></span>
+              </button>
             </button>
           </div>
         </div>
@@ -70,7 +52,7 @@ const Page: React.FC = () => {
               <p>✔️ Manage your policies in one place</p>
               <p>✔️ Access quick support and updates</p>
               <p className="mt-4">Let’s light the way to your secure future.</p>
-              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4">              <span><Link href="/signUp">REGISTER</Link></span></button>
+              <button className="bg-[#FFC840] text-black py-2 px-8 rounded-lg text-[12px] font-montserrat font-bold mt-4"><span><Link href="/clientProfile">MY PROFILE</Link></span></button>
             </div>
           </div>
           <div className="absolute bottom-13 right-170 bg-white rounded-lg w-40 h-40 shadow-lg border-2 border-black" style={{ transform: 'translate(50%, 50%)' }}>
@@ -121,51 +103,52 @@ const Page: React.FC = () => {
         </div>
       </div>
       <div className="mt-32 mx-auto p-8 rounded-lg shadow-lg max-w-6xl border-2 border-black flex items-center justify-center" style={{ background: 'linear-gradient(to bottom, #FFC840, #FBFBFB)' }}>
-          <div className="flex flex-col items-center">
-            <h3 className="font-montserrat text-2xl text-black mb-4 text-center font-bold">
-              Why <br /> Choose <br /> Lumina?
-            </h3>
+        <div className="flex flex-col items-center">
+          <h3 className="font-montserrat text-2xl text-black mb-4 text-center font-bold">
+            Why <br /> Choose <br /> Lumina?
+          </h3>
+        </div>
+        <div className="ml-8 flex flex-col justify-center items-start">
+          <div className="flex items-center mb-4">
+            <span className="font-montserrat text-sm text-black">💡</span>
+            <p className="font-montserrat text-sm text-black ml-2">Simple process – No complicated steps</p>
           </div>
-          <div className="ml-8 flex flex-col justify-center items-start">
-            <div className="flex items-center mb-4">
-              <span className="font-montserrat text-sm text-black">💡</span>
-              <p className="font-montserrat text-sm text-black ml-2">Simple process – No complicated steps</p>
-            </div>
-            <div className="flex items-center mb-4">
-              <span className="font-montserrat text-sm text-black">📱</span>
-              <p className="font-montserrat text-sm text-black ml-2">Easy access – Manage your account anytime, anywhere</p>
-            </div>
-            <div className="flex items-center mb-4">
-              <span className="font-montserrat text-sm text-black">💬</span>
-              <p className="font-montserrat text-sm text-black ml-2">Reliable support – Our team is here when you need us</p>
-            </div>
-            <div className="flex items-center">
-              <span className="font-montserrat text-sm text-black">💰</span>
-              <p className="font-montserrat text-sm text-black ml-2">Affordable plans – Quality coverage that fits your budget</p>
-            </div>
+          <div className="flex items-center mb-4">
+            <span className="font-montserrat text-sm text-black">📱</span>
+            <p className="font-montserrat text-sm text-black ml-2">Easy access – Manage your account anytime, anywhere</p>
           </div>
+          <div className="flex items-center mb-4">
+            <span className="font-montserrat text-sm text-black">💬</span>
+            <p className="font-montserrat text-sm text-black ml-2">Reliable support – Our team is here when you need us</p>
           </div>
-      <footer className="bg-[#FFC840] text-black py-1 mt-16">
+          <div className="flex items-center">
+            <span className="font-montserrat text-sm text-black">💰</span>
+            <p className="font-montserrat text-sm text-black ml-2">Affordable plans – Quality coverage that fits your budget</p>
+          </div>
+        </div>
+      </div>
+      <footer className="bg-[#FFC840] text-black py-4 mt-35">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col items-start">
             <div className="flex space-x-2">
-              <a href="#" className="font-montserrat text-xs font-bold">Our Team</a>
-              <a href="#" className="font-montserrat text-xs font-bold">Contact Us</a>
-              <a href="#" className="font-montserrat text-xs font-bold">Terms and Conditions</a>
-            </div>
-            <div className="flex items-center mt-1">
-              <img src="/images/mail.png" alt="Email" className="h-3 w-3 mr-1" />
-              <p className="font-montserrat text-xs font-bold">lumina.insurances@gmail.com</p>
+              <p className="font-montserrat text-xs">Copyright © 2025 Lumina Insurances. All rights reserved.</p>
             </div>
           </div>
-          
           <div className="flex flex-col items-end">
-            <p className="font-montserrat text-xs font-bold">© 2025 Lumina Insurances. All rights reserved.</p>
             <div className="flex justify-center items-center space-x-2 mt-1">
+              <a href="#" className="font-montserrat text-xs">Our Team</a>
+              <a href="#" className="font-montserrat text-xs">Contact Us</a>
+              <a href="#" className="font-montserrat text-xs">Terms and Conditions</a>
+            </div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-2 mt-2">
               <img src="/images/Facebook.png" alt="Facebook" className="h-4 w-4" />
               <img src="/images/LinkedIn.png" alt="LinkedIn" className="h-4 w-4" />
               <img src="/images/Instagram.png" alt="Instagram" className="h-4 w-4" />
               <img src="/images/X.png" alt="X" className="h-4 w-4" />
+            </div>
+            <div className="flex items-center mt-1">
+              <img src="/images/mail.png" alt="Email" className="h-3 w-3 mr-1" />
+              <p className="font-montserrat text-xs">lumina.insurances@gmail.com</p>
             </div>
           </div>
         </div>
