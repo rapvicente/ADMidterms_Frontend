@@ -245,7 +245,7 @@ const handleChangePasswordClick = () => {
             />
           </div>
         ) : (
-          <div className="text-[15px] font-normal mt-1 text-black font-montserrat">
+          <div className="text-[15px] font-normal mt-2 text-black font-montserrat">
             Password: {password ? '***********' : 'No password set'}
           </div>
         )}
@@ -253,7 +253,7 @@ const handleChangePasswordClick = () => {
         {/* Change Password Button */}
           <div
             onClick={handleChangePasswordClick}
-            className="hover:bg-[#FFC840] absolute left top-[85px] hover:border-white w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full"
+            className="hover:bg-[#FFC840] absolute left top-[90px] hover:border-white w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full"
           >
             <button className="text-center" style={{ cursor: 'pointer' }}>
               {changePasswordMode ? "CANCEL" : "CHANGE PASSWORD"}
