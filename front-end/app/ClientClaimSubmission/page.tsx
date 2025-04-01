@@ -115,13 +115,30 @@ const ClaimSubmission: React.FC = () => {
 
           {/* Supporting Documents & Declaration in Two-Column Layout */}
           <div className="grid grid-cols-2 gap-6 mt-6">
-            {/* Required Supporting Documents */}
+            {/* Required Documents */}
             <div>
-              <h3 className="text-black font-bold mb-2">Required Supporting Documents</h3>
+              <h3 className="text-black font-bold mb-2">Required Documents</h3>
               <div className="grid grid-cols-1 gap-1 text-black">
                 {[
                   "Valid Government ID",
                   "Copy of Policy Contract",
+                ].map((doc, index) => (
+                  <label key={index} className="flex items-center space-x-2">
+                    <input type="checkbox" />
+                    <span>{doc}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Supporting Documents & Declaration in Two-Column Layout */}
+          <div className="grid grid-cols-2 gap-6 mt-6">
+            {/* Supporting Documents */}
+            <div>
+              <h3 className="text-black font-bold mb-2">Supporting Documents</h3>
+              <div className="grid grid-cols-1 gap-1 text-black">
+                {[
                   "Official Receipts / Billing Statements",
                   "Medical or Hospital Records",
                   "Police Report / Incident Report",

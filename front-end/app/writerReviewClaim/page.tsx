@@ -125,16 +125,34 @@ const ClaimSubmission: React.FC = () => {
           <div className="grid grid-cols-2 gap-6 mt-6">
             {/* Required Supporting Documents */}
             <div>
-              <h3 className="text-black font-bold mb-2">Required Supporting Documents</h3>
+              <h3 className="text-black font-bold mb-2">Required Documents</h3>
               <div className="grid grid-cols-1 gap-1 text-black">
                 {[
                   "Valid Government ID",
                   "Copy of Policy Contract",
+                ].map((doc, index) => (
+                  <label key={index} className="flex items-center space-x-2">
+                    <input type="checkbox" />
+                    <span>{doc}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Supporting Documents & Declaration in Two-Column Layout */}
+          <div className="grid grid-cols-2 gap-6 mt-6">
+            {/* Supporting Documents */}
+            <div>
+              <h3 className="text-black font-bold mb-2">Supporting Documents</h3>
+              <div className="grid grid-cols-1 gap-1 text-black">
+                {[
                   "Official Receipts / Billing Statements",
                   "Medical or Hospital Records",
                   "Police Report / Incident Report",
                   "Certificate of Retirement / Age Verification",
                   "School Registration / Proof of Enrollment",
+                  "Death Certificate",
                   "Others_______________________",
                 ].map((doc, index) => (
                   <label key={index} className="flex items-center space-x-2">
@@ -146,7 +164,7 @@ const ClaimSubmission: React.FC = () => {
             </div>
 
             {/* Declaration & Signature */}
-            <div className="bg-white p-4 h-55 mt-1 rounded-lg shadow-md">
+            <div className="bg-white p-4 h-55 mt-1 mb-4 rounded-lg shadow-md">
               <h3 className="text-black font-bold mb-2">Declaration & Signature</h3>
               <p className="text-sm text-black">
                 I, the undersigned, hereby declare that the above information is true and
