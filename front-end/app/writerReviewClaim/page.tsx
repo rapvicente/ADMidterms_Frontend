@@ -105,7 +105,7 @@ const ClaimSubmission: React.FC = () => {
               {["Retirement Claim", "Education Claim", "Health Claim", "Auto Claim"].map(
                 (type, index) => (
                   <label key={index} className="flex items-center space-x-2">
-                    <input type="checkbox" />
+                    <input type="radio" />
                     <span>{type}</span>
                   </label>
                 )
