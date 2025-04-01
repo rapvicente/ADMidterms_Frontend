@@ -120,6 +120,7 @@ const ClaimSubmission: React.FC = () => {
                   "Police Report / Incident Report",
                   "Certificate of Retirement / Age Verification",
                   "School Registration / Proof of Enrollment",
+                  "Death Certificate",
                   "Others_______________________",
                 ].map((doc, index) => (
                   <label key={index} className="flex items-center space-x-2">
