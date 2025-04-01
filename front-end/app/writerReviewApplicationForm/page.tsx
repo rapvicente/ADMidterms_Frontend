@@ -31,10 +31,10 @@ const PolicyCertificate: React.FC = () => {
                     <div className="text-right ml-auto">
                         <h1 className="text-xl font-bold">Certificate of Insurance</h1>
                         <div className="bg-white rounded border-2 text-left pl-2 mt-2 mb-2">
-                            <label className="text-sm">Policy Effective Date</label>
+                            <label className="text-sm">January 1, 2025</label>
                         </div>
                         <div className="bg-white rounded border-2 text-left pl-2">
-                            <label className="text-sm">Policy Number</label>
+                            <label className="text-sm">#12345</label>
                         </div>
                     </div>
                 </div>
@@ -224,10 +224,11 @@ const PolicyCertificate: React.FC = () => {
                     {/* Preferred Due Date */}
                     <div className="ml-4 flex flex-wrap items-center gap-2">
                         <label className="font-semibold">Preferred Due Date:</label>
-                        <input type="text" className="bg-white rounded border-2 p-1" />
-                        <span>
-                            <strong>(<strong>1st, 5th, 10th, 15th, etc.</strong>)</strong>
-                        </span>
+                        <label><input type="radio" name="payment frequency" className="mr-1" />1st</label>
+                        <label><input type="radio" name="payment frequency" className="mr-1" />5th</label>
+                        <label><input type="radio" name="payment frequency" className="mr-1" />10th</label>
+                        <label><input type="radio" name="payment frequency" className="mr-1" />15th</label>
+                        <label><input type="radio" name="payment frequency" className="mr-1" />30th</label>
                     </div>
 
                     {/* Payment Method */}
@@ -258,7 +259,7 @@ const PolicyCertificate: React.FC = () => {
                 <div className="bg-[#FFC840] font-bold text-center py-2 text-lg mb-4 -mx-6">BENEFICIARIES</div>
 
                 {/* Beneficiaries Grid: 6 columns (Name, Birthdate, Sex, Relationship, Contact Number, Email) */}
-                <div className="grid grid-cols-[2fr_1fr_1fr_2fr_2fr_2fr] gap-2 text-xs mb-6">
+                <div className="grid grid-cols-[2fr_1fr_1fr_2fr_2fr] gap-2 text-xs mb-6">
 
                 {/* Headers */}
                 <div className="bg-white rounded border-2 p-2 whitespace-nowrap">
@@ -274,14 +275,11 @@ const PolicyCertificate: React.FC = () => {
                     <p>Relationship to the Insured</p>
                 </div>
                 <div className="bg-white rounded border-2 p-2 whitespace-nowrap">
-                    <p>Contact Number</p>
-                </div>
-                <div className="bg-white rounded border-2 p-2 whitespace-nowrap">
-                    <p>Email</p>
+                    <p>Contact Number/Email</p>
                 </div>
 
                 {/* Dynamic Rows */}
-                {[...Array(5)].map((_, i) => (
+                {[...Array(4)].map((_, i) => (
                     <>
                         <div key={`name-${i}`} className="bg-white rounded border-2 p-2 whitespace-nowrap">
                            <p>Name</p>
@@ -296,11 +294,8 @@ const PolicyCertificate: React.FC = () => {
                             <p>Relationship to the Insured</p>
                         </div>
                         <div key={`contact-${i}`} className="bg-white rounded border-2 p-2 whitespace-nowrap">
-                            <p>Contact Number</p>
+                            <p>Contact Number/Email</p>
                         </div>
-                        <div key={`email-${i}`} className="bg-white rounded border-2 p-2 whitespace-nowrap">
-                            <p>Email</p>
-                       </div>
                     </>
                 ))}
                 </div>
