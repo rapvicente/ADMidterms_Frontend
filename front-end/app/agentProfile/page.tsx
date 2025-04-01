@@ -87,13 +87,13 @@ const Page: React.FC = () => {
         </div>
         
         {/* My Policies */}
-        <div className="absolute top-[390px] left-1/2 absolute left-[504px] w-[120px] text-[12px] h-[30px] flex items-center justify-center border-2 border-[#FFC840] text-black font-montserrat font-bold rounded-2xl">
-          <span className="text-center">My Clients</span>
+        <div className="absolute top-[390px] left-1/2 transform -translate-x-1/2 w-[900px] text-[12px] h-[30px] flex items-center justify-start text-black font-montserrat font-bold">
+          <span className="text-center px-3 py-1 rounded-2xl border-2 border-[#FFC840]">My Clients</span>
         </div>
          <div className="absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
           <div className="absolute left-[20px] top-[10px] flex flex-col space-y-4">
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/agentClientExample">View</Link></span>
               </div>
               <div className="text-[14px] font-montserrat font-bold text-black">
@@ -104,7 +104,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/agentClientExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -115,7 +115,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/agentClientExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -126,7 +126,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/agentClientExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -137,7 +137,7 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/agentClientExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
