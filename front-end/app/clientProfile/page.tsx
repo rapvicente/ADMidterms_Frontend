@@ -92,7 +92,7 @@ const Profile: React.FC = () => {
          <div className="absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
           <div className="absolute left-[20px] top-[10px] flex flex-col space-y-4">
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-montserrat font-bold text-black">
@@ -103,7 +103,7 @@ const Profile: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -114,7 +114,7 @@ const Profile: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -125,7 +125,7 @@ const Profile: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
               <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
@@ -136,7 +136,7 @@ const Profile: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
+              <div className="hover:border-[#FFFFFF] hover:text-[#FFFFFF] w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
                 <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
