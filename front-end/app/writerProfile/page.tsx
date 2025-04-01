@@ -109,12 +109,6 @@ const Page: React.FC = () => {
         <div className="hover:bg-[#FFC840] hover:text-white absolute top-[390px] absolute left-[504px] w-[120px] text-[12px] h-[30px] flex items-center justify-center border-2 border-[#FFC840] text-black font-montserrat font-bold rounded-2xl">
           <span className="text-center">My History</span>
         </div>
-        {/* Additional Content */}
-
-
-
-
-
         <div className="flex justify-between items-center absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] bg-[#FFC840] rounded-3xl p-6">
           <div className="space-y-3">
             <div className="flex items-center space-x-4">

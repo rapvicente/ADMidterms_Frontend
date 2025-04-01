@@ -87,8 +87,8 @@ const Profile: React.FC = () => {
         </div>
         
         {/* My Policies */}
-        <div className="absolute top-[390px] left-1/2 absolute left-[504px] w-[120px] text-[12px] h-[30px] flex items-center justify-center border-2 border-[#FFC840] text-black font-montserrat font-bold rounded-2xl">
-          <span className="text-center">My Policies</span>
+        <div className="absolute top-[42vh] left-1/2 transform -translate-x-1/2 w-[900px] text-[12px] h-[30px] flex items-center justify-start text-black font-montserrat font-bold">
+          <span className="px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">My Policies</span>
         </div>
          <div className="absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
           <div className="absolute left-[20px] top-[10px] flex flex-col space-y-4">
@@ -168,10 +168,10 @@ const Profile: React.FC = () => {
           </div>
       </div>
         {/* Statements */}
-        <div className="absolute top-[710px] left-1/2 absolute left-[504px] w-[120px] text-[12px] h-[30px] flex items-center justify-center border-2 border-[#FFC840] text-black font-montserrat font-bold rounded-2xl">
-          <span className="text-center">Statements</span>
+        <div className="absolute top-[78vh] left-1/2 transform -translate-x-1/2 w-[900px] text-[12px] h-[30px] flex items-center justify-start text-black font-montserrat font-bold">
+          <span className="px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">Statements</span>
         </div>
-        <div className="absolute top-[750px] left-1/2 mb-4 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
+        <div className="absolute top-[755px] left-1/2 mb-4 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
           <div className="absolute left-[20px] top-[10px] mb-4 flex flex-col space-y-4">
             {/* View buttons */}
             <div className="flex items-center space-x-4">
