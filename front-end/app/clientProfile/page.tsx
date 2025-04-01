@@ -85,7 +85,6 @@ const Profile: React.FC = () => {
             </div>
           </div>
         </div>
-        
         {/* My Policies */}
         <div className="absolute top-[42vh] left-1/2 transform -translate-x-1/2 w-[900px] text-[12px] h-[30px] flex items-center justify-start text-black font-montserrat font-bold">
           <span className="px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">My Policies</span>
