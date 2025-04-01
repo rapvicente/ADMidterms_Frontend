@@ -1,20 +1,23 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
 
 const ClaimSubmission: React.FC = () => {
+  const router = useRouter(); // Initialize the router
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-[#F8F8F8] p-6">
       {/* Main Container */}
       <div className="bg-white p-8 rounded-lg shadow-lg mt-4">
         {/* Back Button */}
         <div className="w-full flex justify-end">
-          <a
-            href="/"
+          <button
+            onClick={() => router.back()} // Redirect to the previous page
             className="bg-[#FFC840] px-4 py-2 text-black font-bold rounded-lg shadow-md"
           >
             Back
-          </a>
+          </button>
         </div>
 
         {/* Logo */}
@@ -26,8 +29,10 @@ const ClaimSubmission: React.FC = () => {
         <h2 className="text-2xl font-bold text-black text-center mb-4">
           Review Policy Claim
         </h2>
-        <p className= "text-black text-center pb-10">Claimant Name: Althea Irish Manalo<br/>
-        Status: Pending Review
+        <p className="text-black text-center pb-10">
+          Claimant Name: Althea Irish Manalo
+          <br />
+          Status: Pending Review
         </p>
 
         <div className="bg-[#FFC840] p-6 rounded-lg shadow-md">
@@ -183,51 +188,55 @@ const ClaimSubmission: React.FC = () => {
               for status updates.
             </div>
 
-            <div className="flex justify-end mt-2">
-         
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Additional Section Outside Main Container */}
-<div className="p-6 max-w-5xl w-full mt-2 text-center text-black">
-  <p className="text-justify">
-    I, <strong>JOHN BENEDICT ONG</strong>, hereby confirm that I have thoroughly reviewed the policy application/claim and that my decision to
-  </p>
-  <div className="flex justify-center items-center mt-2">
-    <label className="mx-2 flex items-center">
-      <input type="radio" name="decision" value="accept" className="mr-1" />
-      <em>Accept</em>
-    </label>
-    <label className="mx-2 flex items-center">
-      <input type="radio" name="decision" value="reject" className="mr-1" />
-      <em>Reject</em>
-    </label>
-    <label className="mx-2 flex items-center">
-      <input type="radio" name="decision" value="pending" className="mr-1" />
-      <em>Pending Review</em>
-    </label>
-  </div>
-  <p className="text-justify mt-4">
-    is based on Lumina Insurances' underwriting guidelines, policy terms, and current regulatory standards.
-  </p>
-  <p className="mt-6 text-justify">
-    I understand that this review directly affects client service and compliance, and I affirm that all due diligence has been applied in making this decision.
-  </p>
-  <div className="mt-10">
-    <p className="font-bold mt-2">JOHN BENEDICT ONG</p>
-    <hr className="border-black w-1/4 mx-auto" />
-    <p className="font-bold">Writer Name and Signature</p>
-    <p>Date Signed: December 20, 2024</p>
-  </div>
-  <button className="bg-[#FFC840] px-6 py-2 text-black font-bold rounded-lg shadow-md mt-8">
-    Submit Review
-  </button>
-</div>
 
-     
+
+
+          </div>
+
+
+        </div>
+        {/* Additional Section Outside Main Container */}
+        <div className="p-6 max-w-5xl w-full mt-2 text-center text-black mx-auto">
+          <p className="text-justify text-medium">
+            I, <strong>JOHN BENEDICT ONG</strong>, hereby confirm that I have thoroughly reviewed the policy application/claim and that my decision to
+          </p>
+          <div className="flex justify-center items-center mt-2">
+            <label className="mx-2 flex items-center">
+              <input type="radio" name="decision" value="accept" className="mr-1" />
+              <em><strong>Accept</strong></em>
+            </label>
+            <label className="mx-2 flex items-center">
+              <input type="radio" name="decision" value="reject" className="mr-1" />
+              <em><strong>Reject</strong></em>
+            </label>
+            <label className="mx-2 flex items-center">
+              <input type="radio" name="decision" value="pending" className="mr-1" />
+              <em><strong>Pending Review</strong></em>
+            </label>
+          </div>
+          <p className="text-justify mt-4">
+            is based on Lumina Insurances' underwriting guidelines, policy terms, and current regulatory standards.
+          </p>
+          <p className="mt-2 text-justify">
+            I understand that this review directly affects client service and compliance, and I affirm that all due diligence has been applied in making this decision.
+          </p>
+          <div className="mt-10">
+            <p className="font-bold mt-2">JOHN BENEDICT ONG</p>
+            <hr className="border-black w-1/4 mx-auto" />
+            <p className="font-bold">Writer Name and Signature</p>
+            <p>Date Signed: December 20, 2024</p>
+          </div>
+          <button
+            onClick={() => router.back()}
+            className="bg-[#FFC840] px-14 py-3 text-black font-bold rounded-lg shadow-md mt-8 mb-8">
+
+            Submit Review
+          </button>
+        </div>
+      </div >
+
     </div>
+
   );
 };
 

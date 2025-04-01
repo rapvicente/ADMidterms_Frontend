@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const ClaimSubmission: React.FC = () => {
@@ -9,13 +10,13 @@ const ClaimSubmission: React.FC = () => {
       <div className="bg-white p-8 rounded-lg shadow-lg mt-4">
         {/* Back Button */}
         <div className="w-full flex justify-end">
-          <a
-            href="/"
+          <Link
+            href="/clientClaimsAndServices"
             className="bg-[#FFC840] px-4 py-2 text-black font-bold rounded-lg shadow-md"
           >
             Back
-          </a>
-        </div>
+          </Link>
+        </div>  
 
         {/* Logo */}
         <div className="flex justify-center mb-4">
@@ -179,11 +180,12 @@ const ClaimSubmission: React.FC = () => {
               </a>{" "}
               for status updates.
             </div>
-
             <div className="flex justify-end mt-2">
-              <button className="bg-[#FFC840] px-6 py-2 text-black font-bold rounded-lg shadow-md">
-                Submit Request
-              </button>
+              <Link href="/clientClaimsAndServices">
+                <button className="bg-[#FFC840] px-6 py-2 text-black font-bold rounded-lg shadow-md">
+                  Submit Request
+                </button>
+              </Link>
             </div>
           </div>
         </div>

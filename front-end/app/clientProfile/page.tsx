@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Profile: React.FC = () => {
@@ -18,20 +19,22 @@ const Profile: React.FC = () => {
           font-family: 'Montserrat', sans-serif;
         }
       `}</style>
-      <header className="fixed top-0 left-0 right-0 shadow-md bg-white z-50">
+            <header className="fixed top-0 left-0 right-0 shadow-md bg-white z-50">
         <div className="flex items-center justify-between p-2">
           <div className="flex items-center">
-            <img src="/images/lumina.png" alt="Lumina Logo" width="80" height="80" />
+            <Link href="/clientHomepage">
+              <img src="/images/lumina.png" alt="Lumina Logo" width="80" height="80" />
+            </Link>
           </div>
           <div className="flex space-x-2">
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
-            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claims and Services</button>
+            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold"><Link href="/clientClaimsAndServices">Claims and Services</Link></button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Talk with an Advisor</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span>HOMEPAGE</span>
+            <span><Link href="/clientHomepage">HOMEPAGE</Link></span>
               <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
-                <span>Logout</span>
+                <span><Link href="/">Logout</Link></span>
               </button>
             </button>
           </div>
@@ -91,7 +94,7 @@ const Profile: React.FC = () => {
           <div className="absolute left-[20px] top-[10px] flex flex-col space-y-4">
             <div className="flex items-center space-x-4">
               <div className="w-[90px] text-[12px] font-montserrat h-[35px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
+              <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-montserrat font-bold text-black">
                 Retirement (Premium) •
@@ -102,7 +105,7 @@ const Profile: React.FC = () => {
             </div>
             <div className="flex items-center space-x-4">
               <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
+              <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
                 Education (Basic)  •
@@ -113,7 +116,7 @@ const Profile: React.FC = () => {
             </div>
             <div className="flex items-center space-x-4">
               <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
+              <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
                 Health (Premium)  •
@@ -124,7 +127,7 @@ const Profile: React.FC = () => {
             </div>
             <div className="flex items-center space-x-4">
               <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
+              <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
                 Auto (Standard)  •
@@ -135,7 +138,7 @@ const Profile: React.FC = () => {
             </div>
             <div className="flex items-center space-x-4">
               <div className="w-[90px] text-[12px] h-[35px] font-montserrat flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold rounded-2xl">
-                <span className="text-center">View</span>
+                <span className="text-center"><Link href="/clientPolicyExample">View</Link></span>
               </div>
               <div className="text-[14px] font-bold font-montserrat text-black">
                 Auto (Premium)  •

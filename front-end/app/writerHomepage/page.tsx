@@ -1,8 +1,11 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from 'next/navigation'; // Import useRouter for navigation
 
 const Page: React.FC = () => {
+  const router = useRouter(); // Initialize the router
+
   return (
     <div className="min-h-screen bg-white relative">
       <style jsx global>{`
@@ -21,11 +24,28 @@ const Page: React.FC = () => {
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">About Lumina</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Policies</button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Claim and Services</button>
-            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Review Policy Requests</button>
-            <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold">Review Claims</button>
+            <button
+              className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold"
+              onClick={() => router.push('/writerReviewPolicy')} // Redirect to writerReviewPolicy
+            >
+              Review Policy Requests
+            </button>
+            <button
+              className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold"
+              onClick={() => router.push('/writerReviewClaims')} // Redirect to writerReviewClaims
+            >
+              Review Claims
+            </button>
             <button className="bg-[#FFC840] text-black py-1 px-2 rounded-lg text-[12px] font-montserrat font-bold flex items-center space-x-2">
-              <span>MY PROFILE</span>
-              <button className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1">
+              <span
+                onClick={() => router.push('/writerProfile')} // Redirect to writerProfile
+              >
+                MY PROFILE
+              </span>
+              <button
+                className="bg-white text-black py-1 px-2 rounded-full text-[12px] font-montserrat font-bold flex items-center space-x-1"
+                onClick={() => router.push('/logIn')} // Redirect to logIn
+              >
                 <span>Logout</span>
               </button>
             </button>
