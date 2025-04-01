@@ -145,27 +145,28 @@ const Page: React.FC = () => {
             </div>
           </div>
           </div>
-      <footer className="bg-[#FFC840] text-black py-1 mt-16">
+          <footer className="bg-[#FFC840] text-black py-4 mt-35">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col items-start">
             <div className="flex space-x-2">
-              <a href="#" className="font-montserrat text-xs font-bold">Our Team</a>
-              <a href="#" className="font-montserrat text-xs font-bold">Contact Us</a>
-              <a href="#" className="font-montserrat text-xs font-bold">Terms and Conditions</a>
+            <p className="font-montserrat text-xs">Copyright © 2025 Lumina Insurances. All rights reserved.</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-end">
+            <div className="flex justify-center items-center space-x-2 mt-1">
+              <a href="#" className="font-montserrat text-xs">Our Team</a>
+              <a href="#" className="font-montserrat text-xs">Contact Us</a>
+              <a href="#" className="font-montserrat text-xs">Terms and Conditions</a>
+            </div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-2 mt-2">
+            <img src="/images/Facebook.png" alt="Facebook" className="h-4 w-4" />
+            <img src="/images/LinkedIn.png" alt="LinkedIn" className="h-4 w-4" />
+            <img src="/images/Instagram.png" alt="Instagram" className="h-4 w-4" />
+            <img src="/images/X.png" alt="X" className="h-4 w-4" />
             </div>
             <div className="flex items-center mt-1">
               <img src="/images/mail.png" alt="Email" className="h-3 w-3 mr-1" />
-              <p className="font-montserrat text-xs font-bold">lumina.insurances@gmail.com</p>
-            </div>
-          </div>
-          
-          <div className="flex flex-col items-end">
-            <p className="font-montserrat text-xs font-bold">© 2025 Lumina Insurances. All rights reserved.</p>
-            <div className="flex justify-center items-center space-x-2 mt-1">
-              <img src="/images/Facebook.png" alt="Facebook" className="h-4 w-4" />
-              <img src="/images/LinkedIn.png" alt="LinkedIn" className="h-4 w-4" />
-              <img src="/images/Instagram.png" alt="Instagram" className="h-4 w-4" />
-              <img src="/images/X.png" alt="X" className="h-4 w-4" />
+              <p className="font-montserrat text-xs">lumina.insurances@gmail.com</p>
             </div>
           </div>
         </div>
