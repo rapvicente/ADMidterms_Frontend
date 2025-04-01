@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter for navigation
 
 const ClaimSubmission: React.FC = () => {
   const router = useRouter(); // Initialize the router
+  const [policyType, setPolicyType] = useState("");
+  const [decision, setDecision] = useState<string>("");
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-[#F8F8F8] p-6">
@@ -105,7 +107,13 @@ const ClaimSubmission: React.FC = () => {
               {["Retirement Claim", "Education Claim", "Health Claim", "Auto Claim"].map(
                 (type, index) => (
                   <label key={index} className="flex items-center space-x-2">
-                    <input type="radio" />
+                    <input
+                      type="radio"
+                      name="policyType"
+                      value={type}
+                      checked={policyType === type}
+                      onChange={(e) => setPolicyType(e.target.value)}
+                    />
                     <span>{type}</span>
                   </label>
                 )
@@ -202,16 +210,26 @@ const ClaimSubmission: React.FC = () => {
           </p>
           <div className="flex justify-center items-center mt-2">
             <label className="mx-2 flex items-center">
-              <input type="radio" name="decision" value="accept" className="mr-1" />
+            <input
+            type="radio"
+            name="decision"
+            value="accept"
+            className="mr-1"
+            checked={decision === "accept"}
+            onChange={(e) => setDecision(e.target.value)} // Update the state when clicked
+          />
               <em><strong>Accept</strong></em>
             </label>
             <label className="mx-2 flex items-center">
-              <input type="radio" name="decision" value="reject" className="mr-1" />
+            <input
+            type="radio"
+            name="decision"
+            value="reject"
+            className="mr-1"
+            checked={decision === "reject"}
+            onChange={(e) => setDecision(e.target.value)} // Update the state when clicked
+          />
               <em><strong>Reject</strong></em>
-            </label>
-            <label className="mx-2 flex items-center">
-              <input type="radio" name="decision" value="pending" className="mr-1" />
-              <em><strong>Pending Review</strong></em>
             </label>
           </div>
           <p className="text-justify mt-4">

@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const ClaimSubmission: React.FC = () => {
+  const [policyType, setPolicyType] = useState("");
   return (
     <div className="min-h-screen flex flex-col items-center bg-[#F8F8F8] p-6">
       {/* Main Container */}
@@ -98,7 +99,13 @@ const ClaimSubmission: React.FC = () => {
               {["Retirement Claim", "Education Claim", "Health Claim", "Auto Claim"].map(
                 (type, index) => (
                   <label key={index} className="flex items-center space-x-2">
-                    <input type="checkbox" />
+                    <input
+                      type="radio"
+                      name="policyType"
+                      value={type}
+                      checked={policyType === type}
+                      onChange={(e) => setPolicyType(e.target.value)}
+                    />
                     <span>{type}</span>
                   </label>
                 )
