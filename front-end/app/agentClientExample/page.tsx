@@ -149,7 +149,7 @@ const Page: React.FC = () => {
             Status: Active
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
+            Status: Under Review
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
             Status: Under Review
