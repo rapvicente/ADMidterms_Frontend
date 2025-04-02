@@ -113,7 +113,7 @@ const Profile: React.FC = () => {
       </header>
       <div className="relative flex items-center justify-center min-h-screen">
       <div className="absolute top-[130px] left-1/2 transform -translate-x-1/2 w-[900px] h-[200px] bg-[#D9D9D9] rounded-3xl mb-1">
-        <div className="absolute left w-[200px] h-[200px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
+        <div className="shadow-2xl absolute left w-[200px] h-[200px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
           <img src="/images/lumina.png" alt="Lumina Logo" className="absolute top-1/2 left-1/2 w-[50%] h-[50%] transform -translate-x-1/2 -translate-y-1/2" />
         </div>
         <div className="absolute left-[230px] top-[10px]">
@@ -144,6 +144,7 @@ const Profile: React.FC = () => {
                 className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[200px]"
                 value={birthdate}
                 onChange={(e) => setBirthdate(e.target.value)}
+                max={new Date().toISOString().split('T')[0]}  // Prevent future dates
               />
             ) : (
               <div className="text-[15px] text-black font-montserrat">Birthdate: {birthdate}</div>
@@ -155,24 +156,24 @@ const Profile: React.FC = () => {
               <div className="text-[15px] text-black font-montserrat">Agent Name: {agent}</div>
           </div>
 
-          {/* Profile */}
+          {/* Edit Profile button */}
           <div
             onClick={handleEditClick}
-            className="hover:bg-[#FFC840] hover:border-white mt-2 w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full"
+            className="hover:bg-[#FFC840] hover:border-white absolute top-[140px] w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full"
           >
             <button className="text-center" style={{ cursor: "pointer" }}>
               {isEditing ? "SAVE PROFILE" : "EDIT PROFILE"}
             </button>
           </div>
         </div>
-        <div className="absolute right-[20px] top-[55px]">
 
+        <div className="absolute right-[20px] top-[50px]">
           {/* Email */}
           <div className="flex items-center justify-between">
             {isEditing ? (
               <input
                 type="email"
-                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[260px]"
+                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[310px]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -186,7 +187,7 @@ const Profile: React.FC = () => {
             {isEditing ? (
               <input
                 type="tel"
-                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[250px]"
+                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[310px]"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
@@ -223,7 +224,7 @@ const Profile: React.FC = () => {
         {/* Change Password Button */}
           <div
             onClick={handleChangePasswordClick}
-            className="hover:bg-[#FFC840] absolute left top-[90px] hover:border-white w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full"
+            className="absolute right hover:bg-[#FFC840] hover:border-white absolute top-[100px] w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full"
           >
             <button className="text-center" style={{ cursor: 'pointer' }}>
               {changePasswordMode ? "CANCEL" : "CHANGE PASSWORD"}
@@ -234,7 +235,7 @@ const Profile: React.FC = () => {
           {changePasswordMode && (
             <div
               onClick={handleSavePassword}
-              className={`hover:bg-[#FFC840] absolute left-[180px] hover:border-white mt-8 w-[100px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full '}`}
+              className={`hover:bg-[#FFC840] absolute left-[180px] hover:border-white absolute top-[100px] w-[100px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full '}`}
             >
               <button className="text-center" style={{ cursor: !isPasswordValid || passwordMatchError ? 'not-allowed' : 'pointer' }}>
                 SAVE
@@ -246,7 +247,7 @@ const Profile: React.FC = () => {
         </div>
         {/* My Policies */}
         <div className="absolute top-[42vh] left-1/2 transform -translate-x-1/2 w-[900px] text-[12px] h-[30px] flex items-center justify-start text-black font-montserrat font-bold">
-          <span className="px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">My Policies</span>
+          <span className="shadow-lg px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">My Policies</span>
         </div>
          <div className="absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
           <div className="absolute left-[20px] top-[10px] flex flex-col space-y-4">
@@ -327,7 +328,7 @@ const Profile: React.FC = () => {
       </div>
         {/* Statements */}
         <div className="absolute top-[78vh] left-1/2 transform -translate-x-1/2 w-[900px] text-[12px] h-[30px] flex items-center justify-start text-black font-montserrat font-bold">
-          <span className="px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">Statements</span>
+          <span className="shadow-lg px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">Statements</span>
         </div>
         <div className="absolute top-[755px] left-1/2 mb-4 transform -translate-x-1/2 w-[900px] h-[260px] border-2 border-[#FFC840] rounded-3xl mt-1 mb-1">
           <div className="absolute left-[20px] top-[10px] mb-4 flex flex-col space-y-4">

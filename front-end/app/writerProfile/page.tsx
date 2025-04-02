@@ -1,18 +1,17 @@
 "use client";
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation"; // Import useRouter for navigation
 
 const Page: React.FC = () => {
   const router = useRouter(); // Initialize the router
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [changePasswordMode, setChangePasswordMode] = useState(false); 
-  const [isEditing, setIsEditing] = useState(false);
   const [username, setUsername] = useState("Ongskie");
   const [name, setName] = useState("John Benedict Ong");
-  const [birthdate, setBirthdate] = useState("November 1, 2345");
-  const [age, setAge] = useState("36");
+  const [birthdate, setBirthdate] = useState<string>('November 1, 1988');
+  const [age, setAge] = useState<number>(36);
   const [email, setEmail] = useState("ong2221323@mkt.ceu.edu.ph");
   const [phoneNumber, setPhoneNumber] = useState("0912 3456 789");
   const [password, setPassword] = useState<string>('password1234');
@@ -20,6 +19,27 @@ const Page: React.FC = () => {
   const [passwordError, setPasswordError] = useState<string>('password123456');
   const [passwordMatchError, setPasswordMatchError] = useState<string>('');
   const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+
+// Function to calculate age based on birthdate
+const calculateAge = (birthdate: string): number => {
+  const birthDateObj = new Date(birthdate);
+  const today = new Date();
+  let age = today.getFullYear() - birthDateObj.getFullYear();
+  const monthDiff = today.getMonth() - birthDateObj.getMonth();
+
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
+    age--;
+  }
+  return age;
+};
+
+// Update age when birthdate changes
+useEffect(() => {
+  if (birthdate) {
+    setAge(calculateAge(birthdate));
+  }
+}, [birthdate]);
 
 // Password validation regex
 const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -133,8 +153,8 @@ const handleChangePasswordClick = () => {
       </header>
       
       <div className="relative flex items-center justify-center min-h-screen">
-      <div className="absolute top-[130px] left-1/2 transform -translate-x-1/2 w-[900px] h-[200px] bg-[#D9D9D9] rounded-3xl mb-1">
-        <div className="absolute left w-[200px] h-[200px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
+      <div className="absolute top-[130px] left-1/2 transform -translate-x-1/2 w-[900px] h-[210px] bg-[#D9D9D9] rounded-3xl mb-1">
+        <div className="shadow-2xl absolute left w-[210px] h-[210px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
           <img src="/images/lumina.png" alt="Lumina Logo" className="absolute top-1/2 left-1/2 w-[50%] h-[50%] transform -translate-x-1/2 -translate-y-1/2" />
         </div>
         <div className="absolute left-[230px] top-[10px]">
@@ -143,7 +163,7 @@ const handleChangePasswordClick = () => {
             Hello! {username}
           </div>
 
-          {/* Editable Name */}
+          {/* Name */}
           <div className="mt-1">
             {isEditing ? (
               <input
@@ -157,7 +177,7 @@ const handleChangePasswordClick = () => {
             )}
           </div>
 
-          {/* Editable Birthdate */}
+          {/* Birthdate */}
           <div className="mt-2">
             {isEditing ? (
               <input
@@ -165,44 +185,36 @@ const handleChangePasswordClick = () => {
                 className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[200px]"
                 value={birthdate}
                 onChange={(e) => setBirthdate(e.target.value)}
+                max={new Date().toISOString().split('T')[0]}  // Prevent future dates
               />
             ) : (
               <div className="text-[15px] text-black font-montserrat">Birthdate: {birthdate}</div>
             )}
           </div>
 
-          {/* Editable Age */}
+          {/* Age */}
           <div className="mt-2">
-            {isEditing ? (
-              <input
-                type="number"
-                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[200px]"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-              />
-            ) : (
-              <div className="text-[15px] text-black font-montserrat">Age: {age}</div>
-            )}
+            <div className="text-[15px] text-black font-montserrat">Age: {age}</div>
           </div>
 
-          {/* Edit Profile */}
+          {/* Edit Profile button */}
           <div
             onClick={handleEditClick}
-            className="hover:bg-[#FFC840] hover:border-white mt-2 w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full"
+            className="hover:bg-[#FFC840] hover:border-white absolute top-[150px] w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full"
           >
             <button className="text-center" style={{ cursor: "pointer" }}>
               {isEditing ? "SAVE PROFILE" : "EDIT PROFILE"}
             </button>
           </div>
         </div>
-        <div className="absolute right-[20px] top-[55px]">
 
-          {/* Editable Email */}
+        <div className="absolute right-[20px] top-[50px]">
+          {/* Email */}
           <div className="flex items-center justify-between">
             {isEditing ? (
               <input
                 type="email"
-                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[250px]"
+                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[310px]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -211,12 +223,12 @@ const handleChangePasswordClick = () => {
             )}
           </div>
 
-          {/* Editable Phone Number */}
+          {/* Phone Number */}
           <div className="flex items-center justify-between mt-2">
             {isEditing ? (
               <input
                 type="tel"
-                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[250px]"
+                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[310px]"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
@@ -225,8 +237,8 @@ const handleChangePasswordClick = () => {
             )}
           </div>
 
-          {/* Editable Password */}
-          <div className="flex items-center justify-between ">
+          {/* Password */}
+          <div className="flex items-center justify-between">
         {changePasswordMode ? (
           <div>
             <input
@@ -253,7 +265,7 @@ const handleChangePasswordClick = () => {
         {/* Change Password Button */}
           <div
             onClick={handleChangePasswordClick}
-            className="hover:bg-[#FFC840] absolute left top-[90px] hover:border-white w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full"
+            className="absolute right hover:bg-[#FFC840] hover:border-white absolute top-[110px] w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full"
           >
             <button className="text-center" style={{ cursor: 'pointer' }}>
               {changePasswordMode ? "CANCEL" : "CHANGE PASSWORD"}
@@ -264,7 +276,7 @@ const handleChangePasswordClick = () => {
           {changePasswordMode && (
             <div
               onClick={handleSavePassword}
-              className={`hover:bg-[#FFC840] absolute left-[180px] hover:border-white mt-8 w-[100px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full '}`}
+              className={`hover:bg-[#FFC840] absolute left-[180px] hover:border-white absolute top-[110px] w-[100px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full '}`}
             >
               <button className="text-center" style={{ cursor: !isPasswordValid || passwordMatchError ? 'not-allowed' : 'pointer' }}>
                 SAVE
@@ -276,7 +288,7 @@ const handleChangePasswordClick = () => {
         </div>
           
         <div className="absolute top-[42vh] left-1/2 transform -translate-x-1/2 w-[900px] text-[12px] h-[30px] flex items-center justify-start text-black font-montserrat font-bold">
-          <span className="px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">My History</span>
+          <span className="shadow-lg px-3 py-1 rounded-2xl border-2 border-[#FFC840] ml-3 text-left">My History</span>
         </div>
         <div className="flex justify-between items-center absolute top-[430px] left-1/2 transform -translate-x-1/2 w-[900px] bg-[#FFC840] rounded-3xl p-6">
           <div className="space-y-3">
@@ -456,7 +468,7 @@ const handleChangePasswordClick = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-[13vh] left-1/2 transform -translate-x-1/2 w-[400px]">
+      <div className="absolute bottom-[20vh] left-1/2 transform -translate-x-1/2 w-[400px]">
         <button
           className="w-full text-black text-[14px] font-bold py-1 rounded-2xl border-1 hover:bg-[#FFC840] hover:text-white transition-all"
           style={{ cursor: "pointer" }}
@@ -464,7 +476,7 @@ const handleChangePasswordClick = () => {
           View More
         </button>
       </div>
-      <footer className="bg-[#FFC840] text-black py-4 mt-35">
+      <footer className="bg-[#FFC840] text-black py-4 mt-45">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col items-start">
             <div className="flex space-x-2">
