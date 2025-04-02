@@ -1,12 +1,12 @@
 "use client";
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Page: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [changePasswordMode, setChangePasswordMode] = useState(false); 
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
   const [username, setUsername] = useState("DBMercado");
   const [name, setName] = useState("Dave Mercado");
   const [birthdate, setBirthdate] = useState<string>('October 1, 1993');
@@ -19,6 +19,26 @@ const Page: React.FC = () => {
   const [passwordMatchError, setPasswordMatchError] = useState<string>('');
   const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
   
+  // Function to calculate age based on birthdate
+  const calculateAge = (birthdate: string): number => {
+    const birthDateObj = new Date(birthdate);
+    const today = new Date();
+    let age = today.getFullYear() - birthDateObj.getFullYear();
+    const monthDiff = today.getMonth() - birthDateObj.getMonth();
+  
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
+      age--;
+    }
+    return age;
+  };
+  
+  // Update age when birthdate changes
+  useEffect(() => {
+    if (birthdate) {
+      setAge(calculateAge(birthdate));
+    }
+  }, [birthdate]);
+
   // Password validation regex
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   
