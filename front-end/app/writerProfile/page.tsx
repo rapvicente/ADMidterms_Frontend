@@ -15,9 +15,9 @@ const Page: React.FC = () => {
   const [age, setAge] = useState("36");
   const [email, setEmail] = useState("ong2221323@mkt.ceu.edu.ph");
   const [phoneNumber, setPhoneNumber] = useState("0912 3456 789");
-  const [password, setPassword] = useState<string>('');
+  const [password, setPassword] = useState<string>('password1234');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
-  const [passwordError, setPasswordError] = useState<string>('');
+  const [passwordError, setPasswordError] = useState<string>('password123456');
   const [passwordMatchError, setPasswordMatchError] = useState<string>('');
   const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
 
@@ -134,7 +134,7 @@ const handleChangePasswordClick = () => {
       
       <div className="relative flex items-center justify-center min-h-screen">
       <div className="absolute top-[130px] left-1/2 transform -translate-x-1/2 w-[900px] h-[200px] bg-[#D9D9D9] rounded-3xl mb-1">
-        <div className="absolute left-[1px] w-[200px] h-[200px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
+        <div className="absolute left w-[200px] h-[200px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
           <img src="/images/lumina.png" alt="Lumina Logo" className="absolute top-1/2 left-1/2 w-[50%] h-[50%] transform -translate-x-1/2 -translate-y-1/2" />
         </div>
         <div className="absolute left-[230px] top-[10px]">
@@ -148,7 +148,7 @@ const handleChangePasswordClick = () => {
             {isEditing ? (
               <input
                 type="text"
-                className="text-[15px] text-black font-montserrat p-1 border border-gray-400 rounded-2xl h-[30px] w-[200px]"
+                className="text-[15px] text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[200px]"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />

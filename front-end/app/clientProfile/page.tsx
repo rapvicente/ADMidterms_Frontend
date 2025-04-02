@@ -5,10 +5,81 @@ import React, { useState } from 'react';
 
 const Profile: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  
+    const [changePasswordMode, setChangePasswordMode] = useState(false); 
+    const [isEditing, setIsEditing] = useState(false);
+    const [username, setUsername] = useState("Iwissmanalo");
+    const [name, setName] = useState("Althea Irish Manalo");
+    const [birthdate, setBirthdate] = useState("January 1, 2345");
+    const [agent, setAgent] = useState("Dave Mercado");
+    const [email, setEmail] = useState("manalo222641@mkt.ceu.edu.ph");
+    const [phoneNumber, setPhoneNumber] = useState("0912 3456 789");
+    const [password, setPassword] = useState<string>('password1234');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
+    const [passwordError, setPasswordError] = useState<string>('password123456');
+    const [passwordMatchError, setPasswordMatchError] = useState<string>('');
+    const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
+  
+  // Password validation regex
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  
+  // Handle password change with proper type for event parameter
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setPassword(value);
+  
+    // Check password validity
+    if (!passwordRegex.test(value)) {
+      setPasswordError("Password must contain at least one uppercase letter, one number, and one special character, and be at least 8 characters long.");
+      setIsPasswordValid(false);
+    } else {
+      setPasswordError("");
+      setIsPasswordValid(true);
+    }
   };
+  
+  // Handle confirm password change
+  const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setConfirmPassword(value);
+  
+    // Check if passwords match
+    if (value !== password) {
+      setPasswordMatchError("Passwords do not match.");
+    } else {
+      setPasswordMatchError("");
+    }
+  };
+  
+  // Toggle change password mode
+  const handleChangePasswordClick = () => {
+    setChangePasswordMode(!changePasswordMode);
+    setPassword(""); // Optionally reset password field when changing mode
+    setConfirmPassword(""); // Optionally reset confirm password field when changing mode
+    setPasswordError(""); // Clear any previous errors
+    setPasswordMatchError(""); // Clear match error
+  };
+  
+    const toggleDropdown = () => {
+      setIsDropdownOpen(!isDropdownOpen);
+    };
+  
+    const handleSaveProfile = () => {
+      // need to call API
+      console.log("Profile saved:", { name, birthdate, agent, email, phoneNumber });
+      setIsEditing(false); 
+    };
+  
+    const handleSavePassword = () => {
+      // (needs API call)
+      console.log("Password saved:", password);
+      setChangePasswordMode(false); // Close password edit mode
+    };
+  
+    // Toggle profile edit mode
+    const handleEditClick = () => {
+      setIsEditing(!isEditing);
+    };
 
   return (
     <div className="min-h-screen bg-white relative">
@@ -41,47 +112,135 @@ const Profile: React.FC = () => {
         </div>
       </header>
       <div className="relative flex items-center justify-center min-h-screen">
-        <div className="absolute top-[130px] left-1/2 transform -translate-x-1/2 w-[900px] h-[200px] bg-[#D9D9D9] rounded-3xl mb-1">
-          <div className="absolute left-[1px] w-[200px] h-[200px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
-            <img src="/images/lumina.png" alt="Lumina Logo" className="absolute top-1/2 left-1/2 w-[50%] h-[50%] transform -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-[130px] left-1/2 transform -translate-x-1/2 w-[900px] h-[200px] bg-[#D9D9D9] rounded-3xl mb-1">
+        <div className="absolute left w-[200px] h-[200px] bg-[#FFFFFF] border-1 border-black rounded-3xl">
+          <img src="/images/lumina.png" alt="Lumina Logo" className="absolute top-1/2 left-1/2 w-[50%] h-[50%] transform -translate-x-1/2 -translate-y-1/2" />
+        </div>
+        <div className="absolute left-[230px] top-[10px]">
+          {/* Username */}
+          <div className="text-[24px] font-semibold text-black font-montserrat">
+            Hello! {username}
           </div>
-          <div className="absolute left-[230px] top-[10px]">
-            {/* Username */}
-            <div className="text-[24px] font-semibold text-black font-montserrat">
-              Hello! Iwissmanalo
-            </div>
-            {/* Name */}
-            <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Name: Althea Irish Manalo
-            </div>
-            {/* Birthdate */}
-            <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Birthdate: January 1, 2345
-            </div>
-            {/* Age */}
-            <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Agent Name: Dave Mercado
-            </div>
-            {/* Edit Profile */}
-            <div className="mt-4 w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full">
-              <span className="text-center">EDIT PROFILE</span>
-            </div>
+
+          {/* Name */}
+          <div className="mt-1">
+            {isEditing ? (
+              <input
+                type="text"
+                className="text-[15px] text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[200px]"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            ) : (
+              <div className="text-[15px] text-black font-montserrat">Name: {name}</div>
+            )}
           </div>
-          <div className="absolute right-[20px] top-[55px]">
-            {/* Email */}
-            <div className="text-[15px] font-normal text-black font-montserrat">
-              Email: manalo222641@mkt.ceu.edu.ph
-            </div>
-            {/* Phone Number */}
-            <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Phone Number: 0912 3456 789
-            </div>
-            <div className="text-[15px] font-normal text-black font-montserrat mt-2">
-              Password: ***********
-            </div>
-            {/* Change Password */}
-            <div className="mt-4 w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full">
-              <span className="text-center">CHANGE PASSWORD</span>
+
+          {/* Birthdate */}
+          <div className="mt-2">
+            {isEditing ? (
+              <input
+                type="date"
+                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[200px]"
+                value={birthdate}
+                onChange={(e) => setBirthdate(e.target.value)}
+              />
+            ) : (
+              <div className="text-[15px] text-black font-montserrat">Birthdate: {birthdate}</div>
+            )}
+          </div>
+
+          {/* Agent */}
+          <div className="mt-2">
+              <div className="text-[15px] text-black font-montserrat">Agent Name: {agent}</div>
+          </div>
+
+          {/* Profile */}
+          <div
+            onClick={handleEditClick}
+            className="hover:bg-[#FFC840] hover:border-white mt-2 w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-bold font-montserrat rounded-full"
+          >
+            <button className="text-center" style={{ cursor: "pointer" }}>
+              {isEditing ? "SAVE PROFILE" : "EDIT PROFILE"}
+            </button>
+          </div>
+        </div>
+        <div className="absolute right-[20px] top-[55px]">
+
+          {/* Email */}
+          <div className="flex items-center justify-between">
+            {isEditing ? (
+              <input
+                type="email"
+                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[260px]"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            ) : (
+              <div className="text-[15px] font-normal text-black font-montserrat">Email: {email}</div>
+            )}
+          </div>
+
+          {/* Phone Number */}
+          <div className="flex items-center justify-between mt-2">
+            {isEditing ? (
+              <input
+                type="tel"
+                className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[250px]"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+            ) : (
+              <div className="text-[15px] font-normal text-black font-montserrat">Phone Number: {phoneNumber}</div>
+            )}
+          </div>
+
+          {/* Password */}
+          <div className="flex items-center justify-between">
+        {changePasswordMode ? (
+          <div>
+            <input
+              type="password"
+              className="text-[15px] font-normal mb-9 text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[20px] w-[150px]"
+              value={password}
+              onChange={handlePasswordChange}
+              placeholder="New password"
+            />
+            <input
+              type="password"
+              className="text-[15px] font-normal text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[20px] w-[150px] ml-2 mt-2"
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
+              placeholder="Confirm"
+            />
+          </div>
+        ) : (
+          <div className="text-[15px] font-normal mt-2 text-black font-montserrat">
+            Password: {password ? '***********' : 'No password set'}
+          </div>
+        )}
+
+        {/* Change Password Button */}
+          <div
+            onClick={handleChangePasswordClick}
+            className="hover:bg-[#FFC840] absolute left top-[90px] hover:border-white w-[150px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full"
+          >
+            <button className="text-center" style={{ cursor: 'pointer' }}>
+              {changePasswordMode ? "CANCEL" : "CHANGE PASSWORD"}
+            </button>
+          </div>
+
+          {/* Save Password Button */}
+          {changePasswordMode && (
+            <div
+              onClick={handleSavePassword}
+              className={`hover:bg-[#FFC840] absolute left-[180px] hover:border-white mt-8 w-[100px] text-[12px] h-[30px] flex items-center justify-center bg-[#FFC840] border-1 border-black text-black font-montserrat font-bold rounded-full '}`}
+            >
+              <button className="text-center" style={{ cursor: !isPasswordValid || passwordMatchError ? 'not-allowed' : 'pointer' }}>
+                SAVE
+              </button>
+              </div>
+              )}
             </div>
           </div>
         </div>
@@ -159,7 +318,7 @@ const Profile: React.FC = () => {
             Status: Active
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
+            Status: Under Review
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
             Status: Under Review
@@ -235,13 +394,13 @@ const Profile: React.FC = () => {
             Status: Paid
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
+            Status: Under Review
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
+            Status: Under Review
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
-            Status: Pending
+            Status: Under Review
             </div>
             <div className="text-[14px] font-normal text-black font-montserrat mt-8">
             Status: Paid
