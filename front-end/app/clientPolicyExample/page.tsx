@@ -1,15 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const PolicyCertificate: React.FC = () => {
     return (
         <div className="relative">
             <div className="absolute rounded-lg right-10">
+              <Link href="/clientHomepage">
                 <button className="bg-[#FFC840] text-black py-3 px-10 rounded-lg text-sm font-bold shadow-none hover:shadow-inner transition-shadow duration-300">
-                    Back
+                  Back
                 </button>
-
+              </Link>
             </div>
 
             <div className="min-h-screen bg-white text-black font-montserrat px-6 py-8 relative max-w-5xl mx-auto border-3 border-3-gray-300 shadow-lg mt-8 mb-8">
@@ -180,7 +182,7 @@ const PolicyCertificate: React.FC = () => {
                 <div className="bg-[#FFC840] font-bold text-center py-1 mb-4">BENEFICIARIES</div>
 
                 {/* Beneficiaries Grid: 4 columns (Name, Birthdate, Sex, Relationship) */}
-                <div className="grid grid-cols-4 gap-4 text-sm mb-6">
+                <div className="grid grid-cols-5 gap-4 text-sm mb-6">
 
                     {/* Beneficiary 1 */}
                     <div className="border p-2 rounded">
@@ -194,6 +196,9 @@ const PolicyCertificate: React.FC = () => {
                     </div>
                     <div className="border p-2 rounded">
                         <p><strong>Relationship to the Insured</strong><br /> Daughter</p>
+                    </div> 
+                    <div className="border p-2 rounded">
+                        <p><strong>Contact Number/Email</strong><br /> 09123456789 </p>
                     </div>
 
                     {/* Beneficiary 2 */}
@@ -209,18 +214,8 @@ const PolicyCertificate: React.FC = () => {
                     <div className="border p-2 rounded">
                         <p><strong>Relationship to the Insured</strong><br /> Son</p>
                     </div>
-
-                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
-                        <p><strong>Name</strong><br /> Empty Slot</p>
-                    </div>
-                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
-                        <p><strong>Birthdate</strong><br /> Empty Slot</p>
-                    </div>
-                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
-                        <p><strong>Sex</strong><br /> Empty Slot</p>
-                    </div>
-                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
-                        <p><strong>Relationship to the Insured</strong><br /> Empty Slot</p>
+                    <div className="border p-2 rounded">
+                        <p><strong>Contact Number/Email</strong><br /> 09123456789 </p>
                     </div>
 
                     <div className="border p-2 rounded bg-gray-200 text-gray-400">
@@ -235,6 +230,9 @@ const PolicyCertificate: React.FC = () => {
                     <div className="border p-2 rounded bg-gray-200 text-gray-400">
                         <p><strong>Relationship to the Insured</strong><br /> Empty Slot</p>
                     </div>
+                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
+                        <p><strong>Contact Number/Email</strong><br /></p>
+                    </div>
 
                     <div className="border p-2 rounded bg-gray-200 text-gray-400">
                         <p><strong>Name</strong><br /> Empty Slot</p>
@@ -247,6 +245,25 @@ const PolicyCertificate: React.FC = () => {
                     </div>
                     <div className="border p-2 rounded bg-gray-200 text-gray-400">
                         <p><strong>Relationship to the Insured</strong><br /> Empty Slot</p>
+                    </div>
+                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
+                        <p><strong>Contact Number/Email</strong><br /></p>
+                    </div>
+
+                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
+                        <p><strong>Name</strong><br /> Empty Slot</p>
+                    </div>
+                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
+                        <p><strong>Birthdate</strong><br /> Empty Slot</p>
+                    </div>
+                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
+                        <p><strong>Sex</strong><br /> Empty Slot</p>
+                    </div>
+                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
+                        <p><strong>Relationship to the Insured</strong><br /> Empty Slot</p>
+                    </div>
+                    <div className="border p-2 rounded bg-gray-200 text-gray-400">
+                        <p><strong>Contact Number/Email</strong><br /></p>
                     </div>
                 </div>
 
