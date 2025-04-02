@@ -165,7 +165,7 @@ const handleChangePasswordClick = () => {
                 type="text"
                 className="text-[15px] text-black font-montserrat p-2 border border-gray-400 rounded-2xl h-[30px] w-[200px]"
                 value={username}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
               />
             ) : (
               <div className="text-[24px text-black font-montserrat">Hello! {username}</div>
