@@ -4,7 +4,18 @@ import { useRouter } from 'next/navigation';
 
 export default function ReviewPolicyClaims() {
   const router = useRouter();
-  const [claims, setClaims] = useState([]);
+  interface Claim {
+    id: string;
+    full_name?: string;
+    name?: string;
+    policy_type?: string;
+    type?: string;
+    claim_date?: string;
+    date?: string;
+    status?: string;
+  }
+
+  const [claims, setClaims] = useState<Claim[]>([]);
   const [pagination, setPagination] = useState({ page: 1, totalPages: 1 });
 
   // Fetch claims from the backend with pagination
@@ -41,7 +52,7 @@ export default function ReviewPolicyClaims() {
     }
   };
 
-  const handleReviewClick = (claimId) => {
+  const handleReviewClick = (claimId: string) => {
     // Navigate to the writerReviewClaim page with the claim ID as a query parameter
     router.push(`/writerReviewClaim?id=${claimId}`);
   };

@@ -6,9 +6,25 @@ import { useSearchParams } from "next/navigation";
 export default function WriterReviewClaim() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
-  const [claim, setClaim] = useState(null);
+  interface Claim {
+    full_name?: string;
+    policy_id?: string;
+    claimant_dob?: string;
+    claimant_contact_Number?: string;
+    claimant_relationship?: string;
+    event_date?: string;
+    event_location?: string;
+    event_description?: string;
+    amount_claimed?: number;
+    policy_type?: string;
+    required_document?: string;
+    claim_date?: string;
+    status?: string;
+  }
+
+  const [claim, setClaim] = useState<Claim | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [reviewDecision, setReviewDecision] = useState("");
+  const [reviewDecision, setReviewDecision] = useState<"accepted" | "rejected" | "under review" | null>(null);
   const [error, setError] = useState("");
   
   // Fetch claim data based on claim ID
@@ -49,8 +65,8 @@ export default function WriterReviewClaim() {
       });
   }, [id]);
 
-  const handleDecisionChange = (e) => {
-    setReviewDecision(e.target.value);
+  const handleDecisionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setReviewDecision(e.target.value as "accepted" | "rejected" | "under review");
   };
 
   const handleSubmitReview = () => {

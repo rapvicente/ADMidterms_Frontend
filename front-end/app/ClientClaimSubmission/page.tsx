@@ -28,22 +28,26 @@ const ClaimSubmission: React.FC = () => {
   useEffect(() => {
     // First try to get user ID from localStorage
     const userData = localStorage.getItem('userData');
-    let userId = null;
+    let userId: string | null = null;
     
     if (userData) {
       const parsedData = JSON.parse(userData);
       console.log('Setting user ID from localStorage:', parsedData.userId);
       userId = parsedData.userId;
-      setFormData(prev => ({ ...prev, userId: parsedData.userId }));
+      setFormData(prev => ({ ...prev, userId: parsedData.userId || "" }));
     } else {
       // If no user data in localStorage, use test user ID
       userId = '1'; // Replace with actual user ID
       console.log('Setting test user ID:', userId);
-      setFormData(prev => ({ ...prev, userId }));
+      setFormData(prev => ({ ...prev, userId: userId || "" }));
     }
     
     // Fetch user details from the API
-    fetchUserDetails(userId);
+    if (userId) {
+      fetchUserDetails(userId);
+    } else {
+      console.error("User ID is null. Cannot fetch user details.");
+    }
   }, []);
   
   const fetchUserDetails = async (userId: string) => {
